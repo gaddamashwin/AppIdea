@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfDcApp">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcApp" nillable="true" type="tns:DcApp" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcApp" nillable="true" type="tns:ArrayOfDcApp" />
+  <xs:complexType name="DcApp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="appId" type="xs:int" />
+      <xs:element minOccurs="0" name="desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="impact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="issue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pict" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="submittedDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcApp" nillable="true" type="tns:DcApp" />
+  <xs:complexType name="ArrayOfDcSector">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcSector" nillable="true" type="tns:DcSector" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcSector" nillable="true" type="tns:ArrayOfDcSector" />
+  <xs:complexType name="DcSector">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="appId" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sectorId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcSector" nillable="true" type="tns:DcSector" />
+  <xs:complexType name="ArrayOfDcAppDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcAppDetail" nillable="true" type="tns:DcAppDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcAppDetail" nillable="true" type="tns:ArrayOfDcAppDetail" />
+  <xs:complexType name="DcAppDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="appId" type="xs:int" />
+      <xs:element minOccurs="0" name="imageId" type="xs:int" />
+      <xs:element minOccurs="0" name="pict" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcAppDetail" nillable="true" type="tns:DcAppDetail" />
+  <xs:complexType name="ArrayOfDcTech">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcTech" nillable="true" type="tns:DcTech" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcTech" nillable="true" type="tns:ArrayOfDcTech" />
+  <xs:complexType name="DcTech">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="appId" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="techId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcTech" nillable="true" type="tns:DcTech" />
+  <xs:complexType name="ArrayOfDcAppDetails2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcAppDetails2" nillable="true" type="tns:DcAppDetails2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcAppDetails2" nillable="true" type="tns:ArrayOfDcAppDetails2" />
+  <xs:complexType name="DcAppDetails2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="appId" type="xs:int" />
+      <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="commentId" type="xs:int" />
+      <xs:element minOccurs="0" name="date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rating" type="xs:int" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcAppDetails2" nillable="true" type="tns:DcAppDetails2" />
+</xs:schema>

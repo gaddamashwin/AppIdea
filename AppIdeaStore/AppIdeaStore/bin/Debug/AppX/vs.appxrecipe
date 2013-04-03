@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>USCMPUJMITTAL8</Machine>
+    <WindowsUser>asgaddam</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <RegisteredManifestChecksum>7700A51CD979A26F69674EFC036B27BDEBD93A89E43767BB59F24D0CA71A579A</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>4af627cc-3999-42f5-b228-9a6d11d0cc35_1.0.0.0_neutral__sqhgf5safn9a4</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>4af627cc-3999-42f5-b228-9a6d11d0cc35_sqhgf5safn9a4!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>4af627cc-3999-42f5-b228-9a6d11d0cc35</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=asgaddam</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-04-03T18:39:01.805</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\AppIdeaStore.exe">
+      <PackagePath>AppIdeaStore.exe</PackagePath>
+      <Modified>2013-04-03T18:38:56.702</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\AppIdeaStore.pdb">
+      <PackagePath>AppIdeaStore.pdb</PackagePath>
+      <Modified>2013-04-03T18:38:56.666</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\SQLite.WinRT\3.7.16\Redist\Debug\x64\sqlite3.dll">
+      <PackagePath>sqlite3.dll</PackagePath>
+      <Modified>2013-03-22T19:28:59.283</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\SQLite.WinRT\3.7.16\Redist\Debug\x64\sqlite3.pdb">
+      <PackagePath>sqlite3.pdb</PackagePath>
+      <Modified>2013-03-22T19:28:59.359</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\Assets\Logo.png">
+      <PackagePath>Assets\Logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-16T01:42:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\Assets\SmallLogo.png">
+      <PackagePath>Assets\SmallLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-16T01:42:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\Assets\SplashScreen.png">
+      <PackagePath>Assets\SplashScreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-16T01:42:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-16T01:42:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\Assets\LightGray.png">
+      <PackagePath>Assets\LightGray.png</PackagePath>
+      <Modified>2011-12-13T03:08:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\Assets\MediumGray.png">
+      <PackagePath>Assets\MediumGray.png</PackagePath>
+      <Modified>2011-12-13T03:08:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\Assets\DarkGray.png">
+      <PackagePath>Assets\DarkGray.png</PackagePath>
+      <Modified>2011-12-13T03:08:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\App.xaml">
+      <PackagePath>App.xaml</PackagePath>
+      <Modified>2013-04-01T19:42:34.282</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\Common\StandardStyles.xaml">
+      <PackagePath>Common\StandardStyles.xaml</PackagePath>
+      <Modified>2013-04-02T19:55:24.518</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\GroupedItemsPage.xaml">
+      <PackagePath>GroupedItemsPage.xaml</PackagePath>
+      <Modified>2013-04-02T20:01:14.187</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\GroupDetailPage.xaml">
+      <PackagePath>GroupDetailPage.xaml</PackagePath>
+      <Modified>2013-04-02T19:58:01.258</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\ItemDetailPage.xaml">
+      <PackagePath>ItemDetailPage.xaml</PackagePath>
+      <Modified>2013-04-02T20:01:43.735</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2013-04-03T18:39:00.657</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.VCLibs\11.0\">
+      <Name>Microsoft.VCLibs.110.00.Debug</Name>
+      <Version>11.0.51106.1</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.110.00.Debug, MinVersion = 11.0.51106.1</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.VCLibs\11.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.11.00.appx</AppxLocation>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.VCLibs\11.0\">
+      <Name>Microsoft.VCLibs.110.00.Debug</Name>
+      <Version>11.0.51106.1</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.110.00.Debug, MinVersion = 11.0.51106.1</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.VCLibs\11.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.11.00.appx</AppxLocation>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.VCLibs\11.0\">
+      <Name>Microsoft.VCLibs.110.00.Debug</Name>
+      <Version>11.0.51106.1</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.110.00.Debug, MinVersion = 11.0.51106.1</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.VCLibs\11.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.11.00.appx</AppxLocation>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

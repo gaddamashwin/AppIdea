@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://uscmpujmittal8.us.deloitte.com/WcfService/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://uscmpujmittal8.us.deloitte.com/WcfService/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://uscmpujmittal8.us.deloitte.com/WcfService/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService.DataContract" />
+      <xsd:import schemaLocation="http://uscmpujmittal8.us.deloitte.com/WcfService/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://uscmpujmittal8.us.deloitte.com/WcfService/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetTechnology_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTechnology" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTechnology_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTechnologyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComment" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSector_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSector" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetApp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApp" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetApp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppIdea_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppIdea" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppIdea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppIdeaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppSector_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppSector" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppSector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppSectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppDetail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTech_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTech" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTech_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTechResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppDetails2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppDetails2" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppDetails2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppDetails2Response" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetTechnology">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTechnology" message="tns:IService1_GetTechnology_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTechnologyResponse" message="tns:IService1_GetTechnology_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetComment" message="tns:IService1_GetComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCommentResponse" message="tns:IService1_GetComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetImage" message="tns:IService1_GetImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetImageResponse" message="tns:IService1_GetImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetSector" message="tns:IService1_GetSector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetSectorResponse" message="tns:IService1_GetSector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUser" message="tns:IService1_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserResponse" message="tns:IService1_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetApp" message="tns:IService1_GetApp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAppResponse" message="tns:IService1_GetApp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAppDetails" message="tns:IService1_GetAppDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAppDetailsResponse" message="tns:IService1_GetAppDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppIdea">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAppIdea" message="tns:IService1_GetAppIdea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAppIdeaResponse" message="tns:IService1_GetAppIdea_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppSector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAppSector" message="tns:IService1_GetAppSector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAppSectorResponse" message="tns:IService1_GetAppSector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAppDetail" message="tns:IService1_GetAppDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAppDetailResponse" message="tns:IService1_GetAppDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTech">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTech" message="tns:IService1_GetTech_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTechResponse" message="tns:IService1_GetTech_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppDetails2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAppDetails2" message="tns:IService1_GetAppDetails2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAppDetails2Response" message="tns:IService1_GetAppDetails2_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTechnology">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTechnology" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSector">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetSector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApp">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppDetails">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAppDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppIdea">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAppIdea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppSector">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAppSector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppDetail">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAppDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTech">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTech" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppDetails2">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAppDetails2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://uscmpujmittal8.us.deloitte.com/WcfService/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

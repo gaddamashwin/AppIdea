@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://uscmpujmittal8.us.deloitte.com/WcfService/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfTechnologyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TechnologyType" nillable="true" type="tns:TechnologyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTechnologyType" nillable="true" type="tns:ArrayOfTechnologyType" />
+  <xs:complexType name="TechnologyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechnologyId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TechnologyType" nillable="true" type="tns:TechnologyType" />
+  <xs:complexType name="ArrayOfCommentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommentType" nillable="true" type="tns:CommentType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommentType" nillable="true" type="tns:ArrayOfCommentType" />
+  <xs:complexType name="CommentType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="appId" type="xs:int" />
+      <xs:element minOccurs="0" name="comment1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="commentId" type="xs:int" />
+      <xs:element minOccurs="0" name="date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="rating" type="xs:int" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="userId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommentType" nillable="true" type="tns:CommentType" />
+  <xs:complexType name="ArrayOfImageType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImageType" nillable="true" type="tns:ImageType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImageType" nillable="true" type="tns:ArrayOfImageType" />
+  <xs:complexType name="ImageType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppId" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ImageId" type="xs:int" />
+      <xs:element minOccurs="0" name="Pict" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Sequence" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageType" nillable="true" type="tns:ImageType" />
+  <xs:complexType name="ArrayOfSectorType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SectorType" nillable="true" type="tns:SectorType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSectorType" nillable="true" type="tns:ArrayOfSectorType" />
+  <xs:complexType name="SectorType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectorId" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="appID" nillable="true" type="q1:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SectorType" nillable="true" type="tns:SectorType" />
+  <xs:complexType name="ArrayOfUsrType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsrType" nillable="true" type="tns:UsrType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsrType" nillable="true" type="tns:ArrayOfUsrType" />
+  <xs:complexType name="UsrType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsrType" nillable="true" type="tns:UsrType" />
+  <xs:complexType name="ArrayOfappType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="appType" nillable="true" type="tns:appType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfappType" nillable="true" type="tns:ArrayOfappType" />
+  <xs:complexType name="appType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Pict" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="appId" type="xs:int" />
+      <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="impact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="issue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="submittedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="submittedDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="appType" nillable="true" type="tns:appType" />
+</xs:schema>

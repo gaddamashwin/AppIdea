@@ -1,4 +1,4 @@
-﻿using AppIdeaStore.Data;
+﻿using AppIdeaStore.DataModel;
 
 using System;
 using System.Collections.Generic;
@@ -47,10 +47,10 @@ namespace AppIdeaStore
             }
 
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var item = SampleDataSource.GetItem((String)navigationParameter);
-            this.DefaultViewModel["Group"] = item.Group;
-            this.DefaultViewModel["Items"] = item.Group.Items;
-            this.flipView.SelectedItem = item;
+            var item = AppIdeaDataSource.GetAppData((int)navigationParameter);
+            this.DefaultViewModel["Group"] = item.Result;
+            this.DefaultViewModel["Items"] = item.Result.AppDetails().Result;
+            this.DefaultViewModel["Items2"] = item.Result.AppDetails2().Result;
         }
 
         /// <summary>
@@ -61,8 +61,8 @@ namespace AppIdeaStore
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
-            var selectedItem = (SampleDataItem)this.flipView.SelectedItem;
-            pageState["SelectedItem"] = selectedItem.UniqueId;
+            //var selectedItem = (SampleDataItem)this.flipView.SelectedItem;
+            //pageState["SelectedItem"] = selectedItem.UniqueId;
         }
     }
 }
