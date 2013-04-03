@@ -63,17 +63,6 @@ namespace AppIdeaStore.DataModel
             {
                 get
                 {
-                    if (svc == null)
-                    {
-                        System.ServiceModel.BasicHttpBinding binding = new System.ServiceModel.BasicHttpBinding();
-                        binding.MaxReceivedMessageSize = int.MaxValue;
-                        //svc = new ServiceRef.Service2Client(binding, new System.ServiceModel.EndpointAddress("http://USCMPUJMITTAL8.us.deloitte.com/WcfService/Service2.svc"));10.9.183.121
-                        svc = new ServiceRef.Service1Client(binding, new System.ServiceModel.EndpointAddress("http://USCMPUJMITTAL8.us.deloitte.com/WcfService/Service1.svc"));
-                        //if (svc.State != System.ServiceModel.CommunicationState.Opened)
-                        //{ 
-                        //    string a = "a";
-                        //}
-                    }
                     return svc;
                 }
             }
@@ -81,22 +70,31 @@ namespace AppIdeaStore.DataModel
             public static SQLiteAsyncConnection db
             {
                 get{
-                    if (_db == null)
-                    {
-                        var path = Windows.Storage.ApplicationData.Current.LocalFolder.Path + @"\AppDataDemo.db";
-                        _db = new SQLiteAsyncConnection(path);
-                        VerifyData();
-                    }
+                    var path = Windows.Storage.ApplicationData.Current.LocalFolder.Path + @"\AppDataDemo.db";
+                    _db = new SQLiteAsyncConnection(path);
                     return _db;
                 }
             }
 
-            public static async void VerifyData()
+            public static async Task InitObjects()
             {
-                var data = _db.QueryAsync<DcAppDetailData>("SELECT name FROM sqlite_master WHERE type='table';").Result;
-                if (data.Count <= 4)
+                if (_db == null)
                 {
-                    var resut = await _db.CreateTablesAsync(new Type[] { typeof(DcSectorData), typeof(DcAppDetails2Data), typeof(DcAppData), typeof(DcAppDetailData) });
+                    var path = Windows.Storage.ApplicationData.Current.LocalFolder.Path + @"\AppDataDemo.db";
+                    _db = new SQLiteAsyncConnection(path);
+                    //var data = await _db.QueryAsync<DcAppDetailData>("SELECT name FROM sqlite_master WHERE type='table';");
+                    //if (data.Count <= 4)
+                    //{
+                    //    var resut = await _db.CreateTablesAsync(new Type[] { typeof(DcSectorData), typeof(DcAppDetails2Data), typeof(DcAppData), typeof(DcAppDetailData) });
+                    //}
+                }
+
+                if (svc == null)
+                {
+                    System.ServiceModel.BasicHttpBinding binding = new System.ServiceModel.BasicHttpBinding();
+                    binding.MaxReceivedMessageSize = int.MaxValue;
+                    //svc = new ServiceRef.Service2Client(binding, new System.ServiceModel.EndpointAddress("http://USCMPUJMITTAL8.us.deloitte.com/WcfService/Service2.svc"));10.9.183.121
+                    svc = new ServiceRef.Service1Client(binding, new System.ServiceModel.EndpointAddress("http://USCMPUJMITTAL8.us.deloitte.com/WcfService/Service1.svc"));
                 }
             }
 
@@ -134,6 +132,8 @@ namespace AppIdeaStore.DataModel
             {
                 if (_ListApps == null)
                 {
+                    //var path = Windows.Storage.ApplicationData.Current.LocalFolder.Path + @"\AppDataDemo.db";
+                    //var _db1 = new SQLiteAsyncConnection(path);
                     _ListApps = await Helper.db.QueryAsync<DcAppData>("SELECT * FROM DcAppData");
                     if (!_ListApps.Any())
                     {
@@ -177,14 +177,16 @@ namespace AppIdeaStore.DataModel
             {
                 if (_ListAppSectors == null)
                 {
-                    _ListAppSectors = Helper.db.QueryAsync<DcSectorData>("SELECT * FROM DcSectorData").Result;
+                    _ListAppSectors = await Helper.db.QueryAsync<DcSectorData>("SELECT * FROM DcSectorData");
                     if (!_ListAppSectors.Any())
                     {
                         var r = await Helper.appService.GetAppSectorAsync();
+                        var r2 = await DataCollection.ListApps();
                         _ListAppSectors = r.Select(i => Helper.CopyProperties<DcSectorData>(i));
                         await Helper.db.InsertAllAsync(_ListAppSectors);
                     }
                 }
+              
                 return _ListAppSectors;
             }
 
@@ -205,6 +207,7 @@ namespace AppIdeaStore.DataModel
                 if (DataCollection._sectorGroups == null || DataCollection._sectorGroups.Count() == 0)
                 {
                     var data = await DataCollection.ListAppSectors();
+                    var data2 = await DataCollection.ListApps();
                     DataCollection._sectorGroups = new List<SectorAppData>();
                     foreach (var item in data.GroupBy(i => i.sectorId))
                     {

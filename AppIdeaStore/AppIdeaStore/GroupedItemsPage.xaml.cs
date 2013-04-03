@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -36,11 +37,12 @@ namespace AppIdeaStore
         /// </param>
         /// <param name="pageState">A dictionary of state preserved by this page during an earlier
         /// session.  This will be null the first time a page is visited.</param>
-        protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
+        protected override async void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
             //var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
-            var result = AppIdeaDataSource.GetSectorGroups().Result;
+            await Helper.InitObjects();
+            var result = await AppIdeaDataSource.GetSectorGroups();
             this.DefaultViewModel["Groups"] =result;
         }
         

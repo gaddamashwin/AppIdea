@@ -102,8 +102,8 @@ namespace AppIdeaStore.DataModel
             {
                 if (_AppItems == null)
                 {
-                    var data = await DataCollection.ListAppSectors();
-                    var data2 = await DataCollection.ListApps();
+                    var data2 = DataCollection.ListApps().Result;
+                    var data = await  DataCollection.ListAppSectors();
                     _AppItems = from sec in data
                                 join app in data2 on sec.appId equals app.appId
                                 where sec.sectorId == base.sectorId
