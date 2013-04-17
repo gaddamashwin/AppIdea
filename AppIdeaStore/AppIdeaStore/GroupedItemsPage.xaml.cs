@@ -44,6 +44,7 @@ namespace AppIdeaStore
             await Helper.InitObjects();
             var result = await AppIdeaDataSource.GetSectorGroups();
             this.DefaultViewModel["Groups"] =result;
+            Task.WaitAll();
         }
         
         /// <summary>
@@ -75,10 +76,18 @@ namespace AppIdeaStore
             this.Frame.Navigate(typeof(ItemDetailPage), itemId);
         }
 
-        private void backSync_Click_1(object sender, RoutedEventArgs e)
+        private static bool lockObject = false;
+
+        private async void backSync_Click_1(object sender, RoutedEventArgs e)
         {
-            Helper.ClearData();
-            this.DefaultViewModel["Groups"] = AppIdeaDataSource.GetSectorGroups().Result;
+            if (!lockObject)
+            {
+                lockObject = true;
+                await Helper.ClearData();
+                await Helper.InitObjects();
+                await AppIdeaDataSource.GetSectorGroups();
+                lockObject = false;
+            }
         }
     }
 }

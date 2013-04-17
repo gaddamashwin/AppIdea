@@ -38,7 +38,7 @@ namespace AppIdeaStore
         /// </param>
         /// <param name="pageState">A dictionary of state preserved by this page during an earlier
         /// session.  This will be null the first time a page is visited.</param>
-        protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
+        protected async override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             // Allow saved page state to override the initial item to display
             if (pageState != null && pageState.ContainsKey("SelectedItem"))
@@ -47,10 +47,10 @@ namespace AppIdeaStore
             }
 
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var item = AppIdeaDataSource.GetAppData((int)navigationParameter);
-            this.DefaultViewModel["Group"] = item.Result;
-            this.DefaultViewModel["Items"] = item.Result.AppDetails().Result;
-            this.DefaultViewModel["Items2"] = item.Result.AppDetails2().Result;
+            var item = await AppIdeaDataSource.GetAppData((int)navigationParameter);
+            this.DefaultViewModel["Group"] = item;
+            this.DefaultViewModel["Items"] = item.AppDetails;
+            this.DefaultViewModel["Items2"] = item.AppDetails2;
         }
 
         /// <summary>

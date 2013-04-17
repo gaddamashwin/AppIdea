@@ -17,6 +17,11 @@ using SQLite;
 
 namespace AppIdeaStore.DataModel
 {
+        public class sqlite_master
+        {
+            public string name { get; set; }
+        }
+
         public class Helper
         {
             public static BitmapImage ByteArrayToImage(byte[] pict)
@@ -66,27 +71,25 @@ namespace AppIdeaStore.DataModel
                     return svc;
                 }
             }
-            private static SQLiteAsyncConnection _db;
-            public static SQLiteAsyncConnection db
-            {
-                get{
-                    var path = Windows.Storage.ApplicationData.Current.LocalFolder.Path + @"\AppDataDemo.db";
-                    _db = new SQLiteAsyncConnection(path);
-                    return _db;
-                }
-            }
+            //private static SQLiteAsyncConnection _db;
+            //public static SQLiteAsyncConnection db
+            //{
+            //    get{
+            //        var path = Windows.Storage.ApplicationData.Current.LocalFolder.Path + @"\AppDataDemo.db";
+            //        _db = new SQLiteAsyncConnection(path);
+            //        return _db;
+            //    }
+            //}
+
+            public static string SQLitePath = Windows.Storage.ApplicationData.Current.LocalFolder.Path + @"\AppDataD.db";
 
             public static async Task InitObjects()
             {
-                if (_db == null)
+                var _db = new SQLiteAsyncConnection(Helper.SQLitePath);
+                var data = await _db.QueryAsync <sqlite_master>("SELECT name FROM sqlite_master WHERE type='table';");
+                if (data.Count <= 4)
                 {
-                    var path = Windows.Storage.ApplicationData.Current.LocalFolder.Path + @"\AppDataDemo.db";
-                    _db = new SQLiteAsyncConnection(path);
-                    //var data = await _db.QueryAsync<DcAppDetailData>("SELECT name FROM sqlite_master WHERE type='table';");
-                    //if (data.Count <= 4)
-                    //{
-                    //    var resut = await _db.CreateTablesAsync(new Type[] { typeof(DcSectorData), typeof(DcAppDetails2Data), typeof(DcAppData), typeof(DcAppDetailData) });
-                    //}
+                    var resut = await _db.CreateTablesAsync(new Type[] { typeof(DcSectorData), typeof(DcAppDetails2Data), typeof(DcAppData), typeof(DcAppDetailData) });
                 }
 
                 if (svc == null)
@@ -98,22 +101,18 @@ namespace AppIdeaStore.DataModel
                 }
             }
 
-            public static async void deleteTables()
+            public static async Task deleteTables()
             {
+                var db = new SQLiteAsyncConnection(SQLitePath);
                 var r1 = await db.DropTableAsync<DcSectorData>();
                 var r2 = await db.DropTableAsync<DcAppDetails2Data>();
                 var r3 = await db.DropTableAsync<DcAppData>();
-                var r4 = await db.DropTableAsync<DcAppDetailData>();                
-                //while (r1.Status != TaskStatus.RanToCompletion &&
-                //    r2.Status != TaskStatus.RanToCompletion &&
-                //    r3.Status != TaskStatus.RanToCompletion &&
-                //    r4.Status != TaskStatus.RanToCompletion) { }
+                var r4 = await db.DropTableAsync<DcAppDetailData>();
             }
 
-            public static void ClearData()
+            public static async Task ClearData()
             {
-                deleteTables();
-                _db = null;
+                await deleteTables();
                 DataCollection.clearCollection();
             }
         }
@@ -132,13 +131,14 @@ namespace AppIdeaStore.DataModel
             {
                 if (_ListApps == null)
                 {
+                    var db = new SQLiteAsyncConnection(Helper.SQLitePath);
                     //var path = Windows.Storage.ApplicationData.Current.LocalFolder.Path + @"\AppDataDemo.db";
                     //var _db1 = new SQLiteAsyncConnection(path);
-                    _ListApps = await Helper.db.QueryAsync<DcAppData>("SELECT * FROM DcAppData");
+                    _ListApps = await db.QueryAsync<DcAppData>("SELECT * FROM DcAppData");
                     if (!_ListApps.Any())
                     {
                         _ListApps = Helper.appService.GetAppIdeaAsync().Result.Select(i => Helper.CopyProperties<DcAppData>(i));
-                        await Helper.db.InsertAllAsync(_ListApps);
+                        await db.InsertAllAsync(_ListApps);
                     }
                 }
                 return _ListApps;
@@ -147,12 +147,13 @@ namespace AppIdeaStore.DataModel
             {
                 if (_ListAppDetails == null)
                 {
-                    _ListAppDetails = Helper.db.QueryAsync<DcAppDetailData>("SELECT * FROM DcAppDetailData").Result;
+                    var db = new SQLiteAsyncConnection(Helper.SQLitePath);
+                    _ListAppDetails = db.QueryAsync<DcAppDetailData>("SELECT * FROM DcAppDetailData").Result;
                     if (!_ListAppDetails.Any())
                     {
                         var appDetail = await Helper.appService.GetAppDetailAsync();
                         _ListAppDetails = appDetail.Select(i => Helper.CopyProperties<DcAppDetailData>(i));
-                        await Helper.db.InsertAllAsync(_ListAppDetails);
+                        await db.InsertAllAsync(_ListAppDetails);
                     }
                 }
                 return _ListAppDetails;
@@ -162,12 +163,13 @@ namespace AppIdeaStore.DataModel
             {
                     if (_ListApp2Details == null)
                     {
-                        _ListApp2Details = Helper.db.QueryAsync<DcAppDetails2Data>("SELECT * FROM DcAppDetails2Data").Result;
+                        var db = new SQLiteAsyncConnection(Helper.SQLitePath);
+                        _ListApp2Details = db.QueryAsync<DcAppDetails2Data>("SELECT * FROM DcAppDetails2Data").Result;
                         if (!_ListApp2Details.Any())
                         {
                             var appDetail = await Helper.appService.GetAppDetails2Async();
                             _ListApp2Details = appDetail.Select(i => Helper.CopyProperties<DcAppDetails2Data>(i));
-                            await Helper.db.InsertAllAsync(_ListApp2Details);
+                            await db.InsertAllAsync(_ListApp2Details);
                         }
                     }
                     return _ListApp2Details;
@@ -177,13 +179,14 @@ namespace AppIdeaStore.DataModel
             {
                 if (_ListAppSectors == null)
                 {
-                    _ListAppSectors = await Helper.db.QueryAsync<DcSectorData>("SELECT * FROM DcSectorData");
+                    var db = new SQLiteAsyncConnection(Helper.SQLitePath);
+                    _ListAppSectors = await db.QueryAsync<DcSectorData>("SELECT * FROM DcSectorData");
                     if (!_ListAppSectors.Any())
                     {
                         var r = await Helper.appService.GetAppSectorAsync();
                         var r2 = await DataCollection.ListApps();
                         _ListAppSectors = r.Select(i => Helper.CopyProperties<DcSectorData>(i));
-                        await Helper.db.InsertAllAsync(_ListAppSectors);
+                        await db.InsertAllAsync(_ListAppSectors);
                     }
                 }
               
@@ -208,10 +211,18 @@ namespace AppIdeaStore.DataModel
                 {
                     var data = await DataCollection.ListAppSectors();
                     var data2 = await DataCollection.ListApps();
+
                     DataCollection._sectorGroups = new List<SectorAppData>();
                     foreach (var item in data.GroupBy(i => i.sectorId))
                     {
                         SectorAppData sector = Helper.CopyProperties<SectorAppData>(data.Where(i => i.sectorId == item.Key).FirstOrDefault());
+                        
+                        sector.AppItems = from sec in data
+                                    join app in data2 on sec.appId equals app.appId
+                                    where sec.sectorId == sector.sectorId
+                                    select app;
+                        sector.TopAppItems = sector.AppItems.Take(8);
+
                         sector.count = item.Count().ToString();
                         DataCollection._sectorGroups.Add(sector);
                     }
@@ -227,7 +238,25 @@ namespace AppIdeaStore.DataModel
             public static async Task<AppData> GetAppData(int AppID)
             {
                 var data = await DataCollection.ListApps();
-                return data.Where(i => i.appId == AppID).Select(i => Helper.CopyProperties<AppData>(i)).FirstOrDefault();
+                var result = data.Where(i => i.appId == AppID).Select(i => Helper.CopyProperties<AppData>(i)).FirstOrDefault();
+
+                var data2 = await DataCollection.ListAppDetails();
+                result.AppDetails = from appdetails in data2
+                                where appdetails.appId.Equals(result.appId)
+                                select appdetails;
+
+                var data3 = await DataCollection.ListApp2Details();
+                result.AppDetails2 = from appdetails in data3
+                               where appdetails.appId.Equals(result.appId)
+                               select appdetails;
+
+                return result;
             }
         }
+        
+        
     }
+
+
+
+
