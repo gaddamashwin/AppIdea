@@ -1,0 +1,110 @@
+USE [ISTORE]
+GO
+
+/****** Object:  View [dbo].[ViewAppDetails]    Script Date: 4/18/2013 12:59:22 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE VIEW [dbo].[ViewAppDetails]
+AS
+SELECT        app.appId, img.pict, img.imageId
+FROM            dbo.Image AS img INNER JOIN
+                         dbo.App AS app ON app.appId = img.appId
+WHERE        (app.deleted = 0)
+
+
+GO
+
+
+USE [ISTORE]
+GO
+
+/****** Object:  View [dbo].[ViewAppDetails2]    Script Date: 4/18/2013 1:33:10 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE VIEW [dbo].[ViewAppDetails2]
+AS
+SELECT        cmt.comment, cmt.commentId, cmt.appId, usr.firstName+ ' ' + usr.lastName as firstName, usr.lastName, usr.email, cmt.rating, cmt.status, cmt.date
+FROM            dbo.Comments AS cmt INNER JOIN
+                         dbo.App AS app ON app.appId = cmt.appId INNER JOIN
+                         dbo.[User] AS usr ON usr.userId = cmt.userId
+WHERE        (app.deleted = 0)
+
+
+GO
+USE [ISTORE]
+GO
+
+/****** Object:  View [dbo].[ViewApps]    Script Date: 4/18/2013 1:33:29 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[ViewApps]
+AS
+SELECT        app.appId, app.name, app.[desc], app.impact, app.issue, app.idea, app.submittedDate, usr.firstName, usr.lastName, usr.email,
+                             (SELECT        pict
+                               FROM            dbo.Image
+                               WHERE        (imageId =
+                                                             (SELECT        MIN(imageId) AS Expr1
+                                                               FROM            dbo.Image AS Image_1
+                                                               WHERE        (appId = app.appId)))) AS pict
+FROM            dbo.App AS app LEFT OUTER JOIN
+                         dbo.[User] AS usr ON usr.userId = app.submittedBy
+WHERE        (app.deleted = 0)
+
+GO
+
+USE [ISTORE]
+GO
+
+/****** Object:  View [dbo].[ViewSector]    Script Date: 4/18/2013 1:33:52 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE VIEW [dbo].[ViewSector]
+AS
+SELECT    offer.appId, sec.name, sec.sectorId
+FROM            dbo.AppSectorOffering AS offer INNER JOIN
+                         dbo.SectorOffering AS sec ON sec.sectorId = offer.sectorId
+
+
+
+
+GO
+USE [ISTORE]
+GO
+
+/****** Object:  View [dbo].[ViewTech]    Script Date: 4/18/2013 1:34:10 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE VIEW [dbo].[ViewTech]
+AS
+SELECT        ATech.appId, Tech.name, Tech.technologyId as TechId
+FROM            dbo.AppTechnology AS ATech INNER JOIN
+                         dbo.Technology AS Tech ON Tech.technologyId = ATech.techId
+
+
+GO
