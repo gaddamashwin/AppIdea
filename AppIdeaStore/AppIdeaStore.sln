@@ -3,6 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppIdeaStore", "AppIdeaStore\AppIdeaStore.csproj", "{5759DD40-433B-4F94-87B2-B7AEF044791B}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WcfService", "WcfService\", "{12D291CE-22EC-41C2-A203-0A71239CBE92}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/WcfService"
+		Debug.AspNetCompiler.PhysicalPath = "WcfService\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WcfService\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/WcfService"
+		Release.AspNetCompiler.PhysicalPath = "WcfService\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\WcfService\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "42236"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +59,16 @@ Global
 		{5759DD40-433B-4F94-87B2-B7AEF044791B}.Release|x86.ActiveCfg = Release|x86
 		{5759DD40-433B-4F94-87B2-B7AEF044791B}.Release|x86.Build.0 = Release|x86
 		{5759DD40-433B-4F94-87B2-B7AEF044791B}.Release|x86.Deploy.0 = Release|x86
+		{12D291CE-22EC-41C2-A203-0A71239CBE92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D291CE-22EC-41C2-A203-0A71239CBE92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D291CE-22EC-41C2-A203-0A71239CBE92}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{12D291CE-22EC-41C2-A203-0A71239CBE92}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{12D291CE-22EC-41C2-A203-0A71239CBE92}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{12D291CE-22EC-41C2-A203-0A71239CBE92}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D291CE-22EC-41C2-A203-0A71239CBE92}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{12D291CE-22EC-41C2-A203-0A71239CBE92}.Release|ARM.ActiveCfg = Debug|Any CPU
+		{12D291CE-22EC-41C2-A203-0A71239CBE92}.Release|x64.ActiveCfg = Debug|Any CPU
+		{12D291CE-22EC-41C2-A203-0A71239CBE92}.Release|x86.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
