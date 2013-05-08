@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ISTOREModel1StoreContainer" CdmEntityContainer="ISTOREEntities3">
+    <EntitySetMapping Name="ViewAppDetails">
+      <EntityTypeMapping TypeName="ISTOREModel1.ViewAppDetail">
+        <MappingFragment StoreEntitySet="ViewAppDetails">
+          <ScalarProperty Name="imageId" ColumnName="imageId" />
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="pict" ColumnName="pict" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewAppDetails2">
+      <EntityTypeMapping TypeName="ISTOREModel1.ViewAppDetails2">
+        <MappingFragment StoreEntitySet="ViewAppDetails2">
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="commentId" ColumnName="commentId" />
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewApps">
+      <EntityTypeMapping TypeName="ISTOREModel1.ViewApp">
+        <MappingFragment StoreEntitySet="ViewApps">
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="desc" ColumnName="desc" />
+          <ScalarProperty Name="impact" ColumnName="impact" />
+          <ScalarProperty Name="issue" ColumnName="issue" />
+          <ScalarProperty Name="idea" ColumnName="idea" />
+          <ScalarProperty Name="submittedDate" ColumnName="submittedDate" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pict" ColumnName="pict" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewSectors">
+      <EntityTypeMapping TypeName="ISTOREModel1.ViewSector">
+        <MappingFragment StoreEntitySet="ViewSector">
+          <ScalarProperty Name="sectorId" ColumnName="sectorId" />
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewTeches">
+      <EntityTypeMapping TypeName="ISTOREModel1.ViewTech">
+        <MappingFragment StoreEntitySet="ViewTech">
+          <ScalarProperty Name="TechId" ColumnName="TechId" />
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

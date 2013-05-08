@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ISTOREModel1" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ISTOREEntities3" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="ViewAppDetails" EntityType="ISTOREModel1.ViewAppDetail" />
+    <EntitySet Name="ViewAppDetails2" EntityType="ISTOREModel1.ViewAppDetails2" />
+    <EntitySet Name="ViewApps" EntityType="ISTOREModel1.ViewApp" />
+    <EntitySet Name="ViewSectors" EntityType="ISTOREModel1.ViewSector" />
+    <EntitySet Name="ViewTeches" EntityType="ISTOREModel1.ViewTech" />
+  </EntityContainer>
+  <EntityType Name="ViewAppDetail">
+    <Key>
+      <PropertyRef Name="appId" />
+      <PropertyRef Name="imageId" />
+    </Key>
+    <Property Name="appId" Type="Int32" Nullable="false" />
+    <Property Name="pict" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Type="Int32" Name="imageId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ViewAppDetails2">
+    <Key>
+      <PropertyRef Name="commentId" />
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="comment" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="commentId" Type="Int32" Nullable="false" />
+    <Property Name="appId" Type="Int32" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="lastName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="rating" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ViewApp">
+    <Key>
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="appId" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="desc" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="impact" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="issue" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="idea" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="submittedDate" Type="DateTime" Precision="0" />
+    <Property Name="firstName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="lastName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="pict" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ViewSector">
+    <Key>
+      <PropertyRef Name="appId" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="sectorId" />
+    </Key>
+    <Property Name="appId" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Type="Int32" Name="sectorId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ViewTech">
+    <Key>
+      <PropertyRef Name="appId" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="TechId" />
+    </Key>
+    <Property Name="appId" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Type="Int32" Name="TechId" Nullable="false" />
+  </EntityType>
+</Schema>

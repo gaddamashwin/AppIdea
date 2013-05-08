@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JudgeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="JudgeModelStoreContainer">
+    <EntitySet Name="CarModel" EntityType="JudgeModel.Store.CarModel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cars" EntityType="JudgeModel.Store.Cars" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="CarModel">
+    <Key>
+      <PropertyRef Name="CarModelID" />
+    </Key>
+    <Property Name="CarModelID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CarID" Type="int" Nullable="false" />
+    <Property Name="CarModelName" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Cars">
+    <Key>
+      <PropertyRef Name="CarID" />
+    </Key>
+    <Property Name="CarID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CarName" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+</Schema>

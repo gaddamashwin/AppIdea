@@ -1,0 +1,7 @@
+C:\Users\asgaddam\Documents\Visual Studio 2012\Projects\AshwinApplication\WcfService\bin\WcfService.dll
+C:\Users\asgaddam\Documents\Visual Studio 2012\Projects\AshwinApplication\WcfService\bin\WcfService.pdb
+C:\Users\asgaddam\Documents\Visual Studio 2012\Projects\AshwinApplication\WcfService\bin\EntityFramework.dll
+C:\Users\asgaddam\Documents\Visual Studio 2012\Projects\AshwinApplication\WcfService\bin\EntityFramework.xml
+C:\Users\asgaddam\Documents\Visual Studio 2012\Projects\AshwinApplication\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache
+C:\Users\asgaddam\Documents\Visual Studio 2012\Projects\AshwinApplication\WcfService\obj\Debug\WcfService.dll
+C:\Users\asgaddam\Documents\Visual Studio 2012\Projects\AshwinApplication\WcfService\obj\Debug\WcfService.pdb

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ISTOREModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ISTOREModel1StoreContainer">
+    <EntitySet Name="ViewAppDetails" EntityType="ISTOREModel1.Store.ViewAppDetails" store:Type="Views" store:Schema="dbo" store:Name="ViewAppDetails">
+      <DefiningQuery>SELECT 
+      [ViewAppDetails].[appId] AS [appId], 
+      [ViewAppDetails].[pict] AS [pict], 
+      [ViewAppDetails].[imageId] AS [imageId]
+      FROM [dbo].[ViewAppDetails] AS [ViewAppDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewAppDetails2" EntityType="ISTOREModel1.Store.ViewAppDetails2" store:Type="Views" store:Schema="dbo" store:Name="ViewAppDetails2">
+      <DefiningQuery>SELECT 
+      [ViewAppDetails2].[comment] AS [comment], 
+      [ViewAppDetails2].[commentId] AS [commentId], 
+      [ViewAppDetails2].[appId] AS [appId], 
+      [ViewAppDetails2].[firstName] AS [firstName], 
+      [ViewAppDetails2].[lastName] AS [lastName], 
+      [ViewAppDetails2].[email] AS [email], 
+      [ViewAppDetails2].[rating] AS [rating], 
+      [ViewAppDetails2].[status] AS [status], 
+      [ViewAppDetails2].[date] AS [date]
+      FROM [dbo].[ViewAppDetails2] AS [ViewAppDetails2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewApps" EntityType="ISTOREModel1.Store.ViewApps" store:Type="Views" store:Schema="dbo" store:Name="ViewApps">
+      <DefiningQuery>SELECT 
+      [ViewApps].[appId] AS [appId], 
+      [ViewApps].[name] AS [name], 
+      [ViewApps].[desc] AS [desc], 
+      [ViewApps].[impact] AS [impact], 
+      [ViewApps].[issue] AS [issue], 
+      [ViewApps].[idea] AS [idea], 
+      [ViewApps].[submittedDate] AS [submittedDate], 
+      [ViewApps].[firstName] AS [firstName], 
+      [ViewApps].[lastName] AS [lastName], 
+      [ViewApps].[email] AS [email], 
+      [ViewApps].[pict] AS [pict]
+      FROM [dbo].[ViewApps] AS [ViewApps]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewSector" EntityType="ISTOREModel1.Store.ViewSector" store:Type="Views" store:Schema="dbo" store:Name="ViewSector">
+      <DefiningQuery>SELECT 
+      [ViewSector].[appId] AS [appId], 
+      [ViewSector].[name] AS [name], 
+      [ViewSector].[sectorId] AS [sectorId]
+      FROM [dbo].[ViewSector] AS [ViewSector]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewTech" EntityType="ISTOREModel1.Store.ViewTech" store:Type="Views" store:Schema="dbo" store:Name="ViewTech">
+      <DefiningQuery>SELECT 
+      [ViewTech].[appId] AS [appId], 
+      [ViewTech].[name] AS [name], 
+      [ViewTech].[TechId] AS [TechId]
+      FROM [dbo].[ViewTech] AS [ViewTech]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ISTORE.dbo.ViewAppDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ViewAppDetails">
+    <Key>
+      <PropertyRef Name="appId" />
+      <PropertyRef Name="imageId" />
+    </Key>
+    <Property Name="appId" Type="int" Nullable="false" />
+    <Property Name="pict" Type="image" Nullable="false" />
+    <Property Name="imageId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ISTORE.dbo.ViewAppDetails2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ViewAppDetails2">
+    <Key>
+      <PropertyRef Name="commentId" />
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="comment" Type="varchar(max)" Nullable="false" />
+    <Property Name="commentId" Type="int" Nullable="false" />
+    <Property Name="appId" Type="int" Nullable="false" />
+    <Property Name="firstName" Type="varchar(max)" />
+    <Property Name="lastName" Type="varchar(max)" />
+    <Property Name="email" Type="varchar(max)" Nullable="false" />
+    <Property Name="rating" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" />
+    <Property Name="date" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ISTORE.dbo.ViewApps' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ViewApps">
+    <Key>
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="appId" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" Nullable="false" />
+    <Property Name="desc" Type="varchar(max)" Nullable="false" />
+    <Property Name="impact" Type="varchar(max)" />
+    <Property Name="issue" Type="varchar(max)" />
+    <Property Name="idea" Type="varchar(max)" />
+    <Property Name="submittedDate" Type="date" />
+    <Property Name="firstName" Type="varchar(max)" />
+    <Property Name="lastName" Type="varchar(max)" />
+    <Property Name="email" Type="varchar(max)" />
+    <Property Name="pict" Type="image" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ISTORE.dbo.ViewSector' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ViewSector">
+    <Key>
+      <PropertyRef Name="appId" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="sectorId" />
+    </Key>
+    <Property Name="appId" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" Nullable="false" />
+    <Property Name="sectorId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ISTORE.dbo.ViewTech' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ViewTech">
+    <Key>
+      <PropertyRef Name="appId" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="TechId" />
+    </Key>
+    <Property Name="appId" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar(max)" Nullable="false" />
+    <Property Name="TechId" Type="int" Nullable="false" />
+  </EntityType>
+</Schema>

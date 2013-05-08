@@ -97,7 +97,7 @@ namespace AppIdeaStore.DataModel
                     System.ServiceModel.BasicHttpBinding binding = new System.ServiceModel.BasicHttpBinding();
                     binding.MaxReceivedMessageSize = int.MaxValue;
                     //svc = new ServiceRef.Service2Client(binding, new System.ServiceModel.EndpointAddress("http://USCMPUJMITTAL8.us.deloitte.com/WcfService/Service2.svc"));10.9.183.121
-                    svc = new ServiceRef.Service1Client(binding, new System.ServiceModel.EndpointAddress("http://USCMPUJMITTAL8.us.deloitte.com/WcfService/Service1.svc"));
+                    svc = new ServiceRef.Service1Client(binding, new System.ServiceModel.EndpointAddress("http://172.21.65.27/iStore/IiStore.svc"));
                 }
             }
 
@@ -117,16 +117,19 @@ namespace AppIdeaStore.DataModel
             }
         }
 
+        /// <summary>
+        /// Holds all the Collection items.
+        /// </summary>
         public class DataCollection
         {
-            public static Windows.Storage.ApplicationDataContainer localsettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-
-            public static List<SectorAppData> _sectorGroups;
             private static IEnumerable<DcSectorData> _ListAppSectors;
             private static IEnumerable<DcAppDetails2Data> _ListApp2Details;
             private static IEnumerable<DcAppDetailData> _ListAppDetails;
             private static IEnumerable<DcAppData> _ListApps;
 
+
+            //public static Windows.Storage.ApplicationDataContainer localsettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            public static List<SectorAppData> _sectorGroups;
             public static async Task<IEnumerable<DcAppData>> ListApps()
             {
                 if (_ListApps == null)
@@ -158,7 +161,6 @@ namespace AppIdeaStore.DataModel
                 }
                 return _ListAppDetails;
             }
-
             public static async Task<IEnumerable<DcAppDetails2Data>> ListApp2Details()
             {
                     if (_ListApp2Details == null)
@@ -174,7 +176,6 @@ namespace AppIdeaStore.DataModel
                     }
                     return _ListApp2Details;
             }
-            
             public static async Task<IEnumerable<DcSectorData>> ListAppSectors()
             {
                 if (_ListAppSectors == null)
@@ -192,7 +193,6 @@ namespace AppIdeaStore.DataModel
               
                 return _ListAppSectors;
             }
-
             public static void clearCollection()
             {
                 if (_sectorGroups != null) { _sectorGroups.Clear(); _sectorGroups = null; }
@@ -205,6 +205,10 @@ namespace AppIdeaStore.DataModel
 
         public class AppIdeaDataSource
         {
+            /// <summary>
+            /// Data Source for Grouped Items
+            /// </summary>
+            /// <returns>List of all sectors with top 8 App Data elements</returns>
             public static async Task<IEnumerable<SectorAppData>> GetSectorGroups()
             {
                 if (DataCollection._sectorGroups == null || DataCollection._sectorGroups.Count() == 0)
@@ -230,11 +234,21 @@ namespace AppIdeaStore.DataModel
                 return DataCollection._sectorGroups;
             }
 
+            /// <summary>
+            /// Data Source for Group Detail
+            /// </summary>
+            /// <param name="sectorID">ID of the Group</param>
+            /// <returns>All the App Data for the group</returns>
             public static SectorAppData GetGroup(int sectorID)
             {
                 return DataCollection._sectorGroups.Where(i => i.sectorId == sectorID).FirstOrDefault();
             }
 
+            /// <summary>
+            /// Data source for Item Details(ItemDetailPage.xaml)
+            /// </summary>
+            /// <param name="AppID">AppID of the selected item</param>
+            /// <returns>AppData for the AppID is returned</returns>
             public static async Task<AppData> GetAppData(int AppID)
             {
                 var data = await DataCollection.ListApps();

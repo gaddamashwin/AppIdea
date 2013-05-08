@@ -1,0 +1,6 @@
+C:\Users\asgaddam\Documents\GitHub\AppIdea\TPL\TPL\bin\Debug\TPL.exe.config
+C:\Users\asgaddam\Documents\GitHub\AppIdea\TPL\TPL\bin\Debug\TPL.exe
+C:\Users\asgaddam\Documents\GitHub\AppIdea\TPL\TPL\bin\Debug\TPL.pdb
+C:\Users\asgaddam\Documents\GitHub\AppIdea\TPL\TPL\obj\Debug\TPL.csprojResolveAssemblyReference.cache
+C:\Users\asgaddam\Documents\GitHub\AppIdea\TPL\TPL\obj\Debug\TPL.exe
+C:\Users\asgaddam\Documents\GitHub\AppIdea\TPL\TPL\obj\Debug\TPL.pdb

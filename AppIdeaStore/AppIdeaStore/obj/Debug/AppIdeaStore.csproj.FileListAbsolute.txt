@@ -28,3 +28,7 @@ C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\obj\Debug\r
 C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\obj\Debug\pri.resfiles
 C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\obj\Debug\LanguageQualifiers.txt
 C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\obj\Debug\ProjectArchitectures.txt
+C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\obj\Debug\priconfig.xml.intermediate
+C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\obj\Debug\layout.resfiles.intermediate
+C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\obj\Debug\resources.resfiles.intermediate
+C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\obj\Debug\pri.resfiles.intermediate

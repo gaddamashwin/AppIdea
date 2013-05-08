@@ -1,0 +1,7 @@
+C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeService\bin\JudgeService.dll
+C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeService\bin\JudgeService.pdb
+C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeService\bin\EntityFramework.dll
+C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeService\bin\EntityFramework.xml
+C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeService\obj\Debug\JudgeService.csprojResolveAssemblyReference.cache
+C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeService\obj\Debug\JudgeService.dll
+C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeService\obj\Debug\JudgeService.pdb

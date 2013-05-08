@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ISTOREModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ISTOREEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Apps" EntityType="ISTOREModel.App" />
+    <EntitySet Name="Comments" EntityType="ISTOREModel.Comment" />
+    <EntitySet Name="Images" EntityType="ISTOREModel.Image" />
+    <EntitySet Name="SectorOfferings" EntityType="ISTOREModel.SectorOffering" />
+    <EntitySet Name="sysdiagrams" EntityType="ISTOREModel.sysdiagram" />
+    <EntitySet Name="Technologies" EntityType="ISTOREModel.Technology" />
+    <EntitySet Name="Users" EntityType="ISTOREModel.User" />
+    <EntitySet Name="UserTypes" EntityType="ISTOREModel.UserType" />
+    <AssociationSet Name="FK_App_User" Association="ISTOREModel.FK_App_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="App" EntitySet="Apps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_App" Association="ISTOREModel.FK_Comments_App">
+      <End Role="App" EntitySet="Apps" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Image_App" Association="ISTOREModel.FK_Image_App">
+      <End Role="App" EntitySet="Apps" />
+      <End Role="Image" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_User" Association="ISTOREModel.FK_Comments_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="AppSectorOffering" Association="ISTOREModel.AppSectorOffering">
+      <End Role="App" EntitySet="Apps" />
+      <End Role="SectorOffering" EntitySet="SectorOfferings" />
+    </AssociationSet>
+    <AssociationSet Name="AppTechnology" Association="ISTOREModel.AppTechnology">
+      <End Role="App" EntitySet="Apps" />
+      <End Role="Technology" EntitySet="Technologies" />
+    </AssociationSet>
+    <AssociationSet Name="AppUserType" Association="ISTOREModel.AppUserType">
+      <End Role="App" EntitySet="Apps" />
+      <End Role="UserType" EntitySet="UserTypes" />
+    </AssociationSet>
+    <FunctionImport Name="GetAppDetails" ReturnType="Collection(ISTOREModel.GetAppDetails_Result)" />
+  </EntityContainer>
+  <EntityType Name="App">
+    <Key>
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="desc" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="impact" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="issue" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="idea" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="submittedDate" Type="DateTime" Precision="0" />
+    <Property Name="appId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="submittedBy" Type="Int32" />
+    <Property Name="deleted" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="ISTOREModel.FK_App_User" FromRole="App" ToRole="User" />
+    <NavigationProperty Name="Comments" Relationship="ISTOREModel.FK_Comments_App" FromRole="App" ToRole="Comments" />
+    <NavigationProperty Name="Images" Relationship="ISTOREModel.FK_Image_App" FromRole="App" ToRole="Image" />
+    <NavigationProperty Name="SectorOfferings" Relationship="ISTOREModel.AppSectorOffering" FromRole="App" ToRole="SectorOffering" />
+    <NavigationProperty Name="Technologies" Relationship="ISTOREModel.AppTechnology" FromRole="App" ToRole="Technology" />
+    <NavigationProperty Name="UserTypes" Relationship="ISTOREModel.AppUserType" FromRole="App" ToRole="UserType" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="commentId" />
+    </Key>
+    <Property Name="comment1" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="commentId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="appId" Type="Int32" Nullable="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="rating" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="App" Relationship="ISTOREModel.FK_Comments_App" FromRole="Comments" ToRole="App" />
+    <NavigationProperty Name="User" Relationship="ISTOREModel.FK_Comments_User" FromRole="Comments" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="imageId" />
+    </Key>
+    <Property Name="pict" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="sequence" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="imageId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="appId" Type="Int32" Nullable="false" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="App" Relationship="ISTOREModel.FK_Image_App" FromRole="Image" ToRole="App" />
+  </EntityType>
+  <EntityType Name="SectorOffering">
+    <Key>
+      <PropertyRef Name="sectorId" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="sectorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Apps" Relationship="ISTOREModel.AppSectorOffering" FromRole="SectorOffering" ToRole="App" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Technology">
+    <Key>
+      <PropertyRef Name="technologyId" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="technologyId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Apps" Relationship="ISTOREModel.AppTechnology" FromRole="Technology" ToRole="App" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="email" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="firstName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="lastName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Apps" Relationship="ISTOREModel.FK_App_User" FromRole="User" ToRole="App" />
+    <NavigationProperty Name="Comments" Relationship="ISTOREModel.FK_Comments_User" FromRole="User" ToRole="Comments" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="userTypeId" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="userTypeId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Apps" Relationship="ISTOREModel.AppUserType" FromRole="UserType" ToRole="App" />
+  </EntityType>
+  <Association Name="FK_App_User">
+    <End Role="User" Type="ISTOREModel.User" Multiplicity="0..1" />
+    <End Role="App" Type="ISTOREModel.App" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="App">
+        <PropertyRef Name="submittedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_App">
+    <End Role="App" Type="ISTOREModel.App" Multiplicity="1" />
+    <End Role="Comments" Type="ISTOREModel.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="App">
+        <PropertyRef Name="appId" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="appId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Image_App">
+    <End Role="App" Type="ISTOREModel.App" Multiplicity="1" />
+    <End Role="Image" Type="ISTOREModel.Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="App">
+        <PropertyRef Name="appId" />
+      </Principal>
+      <Dependent Role="Image">
+        <PropertyRef Name="appId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_User">
+    <End Role="User" Type="ISTOREModel.User" Multiplicity="1" />
+    <End Role="Comments" Type="ISTOREModel.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AppSectorOffering">
+    <End Role="App" Type="ISTOREModel.App" Multiplicity="*" />
+    <End Role="SectorOffering" Type="ISTOREModel.SectorOffering" Multiplicity="*" />
+  </Association>
+  <Association Name="AppTechnology">
+    <End Role="App" Type="ISTOREModel.App" Multiplicity="*" />
+    <End Role="Technology" Type="ISTOREModel.Technology" Multiplicity="*" />
+  </Association>
+  <Association Name="AppUserType">
+    <End Role="App" Type="ISTOREModel.App" Multiplicity="*" />
+    <End Role="UserType" Type="ISTOREModel.UserType" Multiplicity="*" />
+  </Association>
+  <ComplexType Name="GetAppDetails_Result">
+    <Property Type="Int32" Name="appId" Nullable="false" />
+    <Property Type="Int32" Name="techId" Nullable="false" />
+    <Property Type="Int32" Name="sectorId" Nullable="false" />
+    <Property Type="Int32" Name="commentId" Nullable="true" />
+    <Property Type="Int32" Name="imageId" Nullable="true" />
+    <Property Type="Int32" Name="userId" Nullable="true" />
+  </ComplexType>
+</Schema>
