@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-04-03T18:39:01.805</Modified>
+      <Modified>2013-05-10T15:33:05.300</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\AppIdeaStore.exe">
       <PackagePath>AppIdeaStore.exe</PackagePath>
-      <Modified>2013-05-08T17:50:36.595</Modified>
+      <Modified>2013-05-10T15:45:51.250</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\AppIdeaStore.pdb">
       <PackagePath>AppIdeaStore.pdb</PackagePath>
-      <Modified>2013-05-08T17:50:36.547</Modified>
+      <Modified>2013-05-10T15:45:51.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\SQLite.WinRT\3.7.16\Redist\Debug\x64\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
@@ -90,7 +90,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-04-03T18:39:00.657</Modified>
+      <Modified>2013-05-10T15:33:05.171</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

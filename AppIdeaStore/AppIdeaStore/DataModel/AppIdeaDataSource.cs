@@ -97,7 +97,8 @@ namespace AppIdeaStore.DataModel
                     System.ServiceModel.BasicHttpBinding binding = new System.ServiceModel.BasicHttpBinding();
                     binding.MaxReceivedMessageSize = int.MaxValue;
                     //svc = new ServiceRef.Service2Client(binding, new System.ServiceModel.EndpointAddress("http://USCMPUJMITTAL8.us.deloitte.com/WcfService/Service2.svc"));10.9.183.121
-                    svc = new ServiceRef.Service1Client(binding, new System.ServiceModel.EndpointAddress("http://172.21.65.27/iStore/IiStore.svc"));
+                    svc = new ServiceRef.Service1Client(binding, new System.ServiceModel.EndpointAddress("http://172.21.65.27/Win8iStore/Service1.svc"));
+                    //svc = new ServiceRef.Service1Client(binding, new System.ServiceModel.EndpointAddress("http://localhost:42236/WcfService/Service1.svc"));
                 }
             }
 
