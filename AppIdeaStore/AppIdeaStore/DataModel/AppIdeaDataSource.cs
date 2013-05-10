@@ -128,9 +128,15 @@ namespace AppIdeaStore.DataModel
             private static IEnumerable<DcAppDetailData> _ListAppDetails;
             private static IEnumerable<DcAppData> _ListApps;
 
-
-            //public static Windows.Storage.ApplicationDataContainer localsettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            /// <summary>
+            /// 
+            /// </summary>
             public static List<SectorAppData> _sectorGroups;
+            
+            /// <summary>
+            /// Contains data from DcAppData(SELECT * FROM DcAppData). This is a static value.
+            /// </summary>
+            /// <returns>Retuns a collection of data contract DcAppData</returns>
             public static async Task<IEnumerable<DcAppData>> ListApps()
             {
                 if (_ListApps == null)
@@ -147,6 +153,11 @@ namespace AppIdeaStore.DataModel
                 }
                 return _ListApps;
             }
+            
+            /// <summary>
+            /// Contains data from DcAppDetailData(SELECT * FROM DcAppDetailData). This is a static value.
+            /// </summary>
+            /// <returns>Retuns a collection of data contract DcAppDetailData</returns>
             public static async Task<IEnumerable<DcAppDetailData>> ListAppDetails()
             {
                 if (_ListAppDetails == null)
@@ -162,6 +173,11 @@ namespace AppIdeaStore.DataModel
                 }
                 return _ListAppDetails;
             }
+
+            /// <summary>
+            /// Contains data from DcAppDetails2Data(SELECT * FROM DcAppDetails2Data). This is a static value.
+            /// </summary>
+            /// <returns>Retuns a collection of data contract DcAppDetails2Data</returns>
             public static async Task<IEnumerable<DcAppDetails2Data>> ListApp2Details()
             {
                     if (_ListApp2Details == null)
@@ -177,6 +193,11 @@ namespace AppIdeaStore.DataModel
                     }
                     return _ListApp2Details;
             }
+
+            /// <summary>
+            /// Contains data from DcSectorData(SELECT * FROM DcSectorData). This is a static value.
+            /// </summary>
+            /// <returns>Retuns a collection of data contract DcSectorData</returns>
             public static async Task<IEnumerable<DcSectorData>> ListAppSectors()
             {
                 if (_ListAppSectors == null)
@@ -194,6 +215,10 @@ namespace AppIdeaStore.DataModel
               
                 return _ListAppSectors;
             }
+
+            /// <summary>
+            /// Deletes all the data in the lists.
+            /// </summary>
             public static void clearCollection()
             {
                 if (_sectorGroups != null) { _sectorGroups.Clear(); _sectorGroups = null; }
