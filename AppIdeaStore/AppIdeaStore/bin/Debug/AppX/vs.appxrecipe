@@ -22,11 +22,11 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\AppIdeaStore.exe">
       <PackagePath>AppIdeaStore.exe</PackagePath>
-      <Modified>2013-05-10T15:45:51.250</Modified>
+      <Modified>2013-05-10T18:37:05.041</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\AppIdeaStore\AppIdeaStore\bin\Debug\AppIdeaStore.pdb">
       <PackagePath>AppIdeaStore.pdb</PackagePath>
-      <Modified>2013-05-10T15:45:51.223</Modified>
+      <Modified>2013-05-10T18:37:04.970</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\SQLite.WinRT\3.7.16\Redist\Debug\x64\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>

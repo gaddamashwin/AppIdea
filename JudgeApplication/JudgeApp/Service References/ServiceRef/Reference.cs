@@ -120,6 +120,561 @@ namespace JudgeApp.ServiceRef {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CarJudgementType", Namespace="http://schemas.datacontract.org/2004/07/JudgeService")]
+    public partial class CarJudgementType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int AccessoriesEngineField;
+        
+        private int AccessoriesInteriorField;
+        
+        private int AppearanceWheelsField;
+        
+        private int BreaksUCPerformanceField;
+        
+        private int CarIdField;
+        
+        private int CarJudgementIDField;
+        
+        private int CleanlinessEngineField;
+        
+        private int CleanlinessInteriorField;
+        
+        private int CleanlinessUCDetailsField;
+        
+        private int CleanlinessWheelsField;
+        
+        private int DisplayODetailsField;
+        
+        private int FitNFinishExteriorField;
+        
+        private int ICEICEDetailsField;
+        
+        private string JudgedByJudgedDetailsField;
+        
+        private System.DateTime JudgedDateJudgedDetailsField;
+        
+        private int ModificationsEngineField;
+        
+        private int OneOfCustomizationsEngineField;
+        
+        private int OneOfCustomizationsExteriorField;
+        
+        private int OverAllExteriorField;
+        
+        private int OverallAppearanceODetailsField;
+        
+        private int OverallTiersField;
+        
+        private int PaintApperanceExteriorField;
+        
+        private int PaintCleanlinessExteriorField;
+        
+        private int PaintCompletenessExteriorField;
+        
+        private int PaintOrPowercoatUCDetailsField;
+        
+        private int PaintOriginalityExteriorField;
+        
+        private int QualityOfInstallICEDetailsField;
+        
+        private int SoundICEDetailsField;
+        
+        private int SuspensionUCPerformanceField;
+        
+        private int UniquenessOfInstallationField;
+        
+        private int UniquenessOfProductExteriorField;
+        
+        private int UniquenessOfProductsEngineField;
+        
+        private int UniquenessOfProductsICEDetailsField;
+        
+        private int UniquenessOfProductsInteriorField;
+        
+        private int UniquenessOfProductsWheelsField;
+        
+        private int UpholsteryInteriorField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AccessoriesEngine {
+            get {
+                return this.AccessoriesEngineField;
+            }
+            set {
+                if ((this.AccessoriesEngineField.Equals(value) != true)) {
+                    this.AccessoriesEngineField = value;
+                    this.RaisePropertyChanged("AccessoriesEngine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AccessoriesInterior {
+            get {
+                return this.AccessoriesInteriorField;
+            }
+            set {
+                if ((this.AccessoriesInteriorField.Equals(value) != true)) {
+                    this.AccessoriesInteriorField = value;
+                    this.RaisePropertyChanged("AccessoriesInterior");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AppearanceWheels {
+            get {
+                return this.AppearanceWheelsField;
+            }
+            set {
+                if ((this.AppearanceWheelsField.Equals(value) != true)) {
+                    this.AppearanceWheelsField = value;
+                    this.RaisePropertyChanged("AppearanceWheels");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BreaksUCPerformance {
+            get {
+                return this.BreaksUCPerformanceField;
+            }
+            set {
+                if ((this.BreaksUCPerformanceField.Equals(value) != true)) {
+                    this.BreaksUCPerformanceField = value;
+                    this.RaisePropertyChanged("BreaksUCPerformance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CarId {
+            get {
+                return this.CarIdField;
+            }
+            set {
+                if ((this.CarIdField.Equals(value) != true)) {
+                    this.CarIdField = value;
+                    this.RaisePropertyChanged("CarId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CarJudgementID {
+            get {
+                return this.CarJudgementIDField;
+            }
+            set {
+                if ((this.CarJudgementIDField.Equals(value) != true)) {
+                    this.CarJudgementIDField = value;
+                    this.RaisePropertyChanged("CarJudgementID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CleanlinessEngine {
+            get {
+                return this.CleanlinessEngineField;
+            }
+            set {
+                if ((this.CleanlinessEngineField.Equals(value) != true)) {
+                    this.CleanlinessEngineField = value;
+                    this.RaisePropertyChanged("CleanlinessEngine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CleanlinessInterior {
+            get {
+                return this.CleanlinessInteriorField;
+            }
+            set {
+                if ((this.CleanlinessInteriorField.Equals(value) != true)) {
+                    this.CleanlinessInteriorField = value;
+                    this.RaisePropertyChanged("CleanlinessInterior");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CleanlinessUCDetails {
+            get {
+                return this.CleanlinessUCDetailsField;
+            }
+            set {
+                if ((this.CleanlinessUCDetailsField.Equals(value) != true)) {
+                    this.CleanlinessUCDetailsField = value;
+                    this.RaisePropertyChanged("CleanlinessUCDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CleanlinessWheels {
+            get {
+                return this.CleanlinessWheelsField;
+            }
+            set {
+                if ((this.CleanlinessWheelsField.Equals(value) != true)) {
+                    this.CleanlinessWheelsField = value;
+                    this.RaisePropertyChanged("CleanlinessWheels");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DisplayODetails {
+            get {
+                return this.DisplayODetailsField;
+            }
+            set {
+                if ((this.DisplayODetailsField.Equals(value) != true)) {
+                    this.DisplayODetailsField = value;
+                    this.RaisePropertyChanged("DisplayODetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FitNFinishExterior {
+            get {
+                return this.FitNFinishExteriorField;
+            }
+            set {
+                if ((this.FitNFinishExteriorField.Equals(value) != true)) {
+                    this.FitNFinishExteriorField = value;
+                    this.RaisePropertyChanged("FitNFinishExterior");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ICEICEDetails {
+            get {
+                return this.ICEICEDetailsField;
+            }
+            set {
+                if ((this.ICEICEDetailsField.Equals(value) != true)) {
+                    this.ICEICEDetailsField = value;
+                    this.RaisePropertyChanged("ICEICEDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string JudgedByJudgedDetails {
+            get {
+                return this.JudgedByJudgedDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JudgedByJudgedDetailsField, value) != true)) {
+                    this.JudgedByJudgedDetailsField = value;
+                    this.RaisePropertyChanged("JudgedByJudgedDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime JudgedDateJudgedDetails {
+            get {
+                return this.JudgedDateJudgedDetailsField;
+            }
+            set {
+                if ((this.JudgedDateJudgedDetailsField.Equals(value) != true)) {
+                    this.JudgedDateJudgedDetailsField = value;
+                    this.RaisePropertyChanged("JudgedDateJudgedDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ModificationsEngine {
+            get {
+                return this.ModificationsEngineField;
+            }
+            set {
+                if ((this.ModificationsEngineField.Equals(value) != true)) {
+                    this.ModificationsEngineField = value;
+                    this.RaisePropertyChanged("ModificationsEngine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OneOfCustomizationsEngine {
+            get {
+                return this.OneOfCustomizationsEngineField;
+            }
+            set {
+                if ((this.OneOfCustomizationsEngineField.Equals(value) != true)) {
+                    this.OneOfCustomizationsEngineField = value;
+                    this.RaisePropertyChanged("OneOfCustomizationsEngine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OneOfCustomizationsExterior {
+            get {
+                return this.OneOfCustomizationsExteriorField;
+            }
+            set {
+                if ((this.OneOfCustomizationsExteriorField.Equals(value) != true)) {
+                    this.OneOfCustomizationsExteriorField = value;
+                    this.RaisePropertyChanged("OneOfCustomizationsExterior");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OverAllExterior {
+            get {
+                return this.OverAllExteriorField;
+            }
+            set {
+                if ((this.OverAllExteriorField.Equals(value) != true)) {
+                    this.OverAllExteriorField = value;
+                    this.RaisePropertyChanged("OverAllExterior");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OverallAppearanceODetails {
+            get {
+                return this.OverallAppearanceODetailsField;
+            }
+            set {
+                if ((this.OverallAppearanceODetailsField.Equals(value) != true)) {
+                    this.OverallAppearanceODetailsField = value;
+                    this.RaisePropertyChanged("OverallAppearanceODetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OverallTiers {
+            get {
+                return this.OverallTiersField;
+            }
+            set {
+                if ((this.OverallTiersField.Equals(value) != true)) {
+                    this.OverallTiersField = value;
+                    this.RaisePropertyChanged("OverallTiers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaintApperanceExterior {
+            get {
+                return this.PaintApperanceExteriorField;
+            }
+            set {
+                if ((this.PaintApperanceExteriorField.Equals(value) != true)) {
+                    this.PaintApperanceExteriorField = value;
+                    this.RaisePropertyChanged("PaintApperanceExterior");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaintCleanlinessExterior {
+            get {
+                return this.PaintCleanlinessExteriorField;
+            }
+            set {
+                if ((this.PaintCleanlinessExteriorField.Equals(value) != true)) {
+                    this.PaintCleanlinessExteriorField = value;
+                    this.RaisePropertyChanged("PaintCleanlinessExterior");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaintCompletenessExterior {
+            get {
+                return this.PaintCompletenessExteriorField;
+            }
+            set {
+                if ((this.PaintCompletenessExteriorField.Equals(value) != true)) {
+                    this.PaintCompletenessExteriorField = value;
+                    this.RaisePropertyChanged("PaintCompletenessExterior");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaintOrPowercoatUCDetails {
+            get {
+                return this.PaintOrPowercoatUCDetailsField;
+            }
+            set {
+                if ((this.PaintOrPowercoatUCDetailsField.Equals(value) != true)) {
+                    this.PaintOrPowercoatUCDetailsField = value;
+                    this.RaisePropertyChanged("PaintOrPowercoatUCDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaintOriginalityExterior {
+            get {
+                return this.PaintOriginalityExteriorField;
+            }
+            set {
+                if ((this.PaintOriginalityExteriorField.Equals(value) != true)) {
+                    this.PaintOriginalityExteriorField = value;
+                    this.RaisePropertyChanged("PaintOriginalityExterior");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int QualityOfInstallICEDetails {
+            get {
+                return this.QualityOfInstallICEDetailsField;
+            }
+            set {
+                if ((this.QualityOfInstallICEDetailsField.Equals(value) != true)) {
+                    this.QualityOfInstallICEDetailsField = value;
+                    this.RaisePropertyChanged("QualityOfInstallICEDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SoundICEDetails {
+            get {
+                return this.SoundICEDetailsField;
+            }
+            set {
+                if ((this.SoundICEDetailsField.Equals(value) != true)) {
+                    this.SoundICEDetailsField = value;
+                    this.RaisePropertyChanged("SoundICEDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SuspensionUCPerformance {
+            get {
+                return this.SuspensionUCPerformanceField;
+            }
+            set {
+                if ((this.SuspensionUCPerformanceField.Equals(value) != true)) {
+                    this.SuspensionUCPerformanceField = value;
+                    this.RaisePropertyChanged("SuspensionUCPerformance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UniquenessOfInstallation {
+            get {
+                return this.UniquenessOfInstallationField;
+            }
+            set {
+                if ((this.UniquenessOfInstallationField.Equals(value) != true)) {
+                    this.UniquenessOfInstallationField = value;
+                    this.RaisePropertyChanged("UniquenessOfInstallation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UniquenessOfProductExterior {
+            get {
+                return this.UniquenessOfProductExteriorField;
+            }
+            set {
+                if ((this.UniquenessOfProductExteriorField.Equals(value) != true)) {
+                    this.UniquenessOfProductExteriorField = value;
+                    this.RaisePropertyChanged("UniquenessOfProductExterior");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UniquenessOfProductsEngine {
+            get {
+                return this.UniquenessOfProductsEngineField;
+            }
+            set {
+                if ((this.UniquenessOfProductsEngineField.Equals(value) != true)) {
+                    this.UniquenessOfProductsEngineField = value;
+                    this.RaisePropertyChanged("UniquenessOfProductsEngine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UniquenessOfProductsICEDetails {
+            get {
+                return this.UniquenessOfProductsICEDetailsField;
+            }
+            set {
+                if ((this.UniquenessOfProductsICEDetailsField.Equals(value) != true)) {
+                    this.UniquenessOfProductsICEDetailsField = value;
+                    this.RaisePropertyChanged("UniquenessOfProductsICEDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UniquenessOfProductsInterior {
+            get {
+                return this.UniquenessOfProductsInteriorField;
+            }
+            set {
+                if ((this.UniquenessOfProductsInteriorField.Equals(value) != true)) {
+                    this.UniquenessOfProductsInteriorField = value;
+                    this.RaisePropertyChanged("UniquenessOfProductsInterior");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UniquenessOfProductsWheels {
+            get {
+                return this.UniquenessOfProductsWheelsField;
+            }
+            set {
+                if ((this.UniquenessOfProductsWheelsField.Equals(value) != true)) {
+                    this.UniquenessOfProductsWheelsField = value;
+                    this.RaisePropertyChanged("UniquenessOfProductsWheels");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UpholsteryInterior {
+            get {
+                return this.UpholsteryInteriorField;
+            }
+            set {
+                if ((this.UpholsteryInteriorField.Equals(value) != true)) {
+                    this.UpholsteryInteriorField = value;
+                    this.RaisePropertyChanged("UpholsteryInterior");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceRef.IService1")]
     public interface IService1 {
@@ -129,6 +684,9 @@ namespace JudgeApp.ServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCarModels", ReplyAction="http://tempuri.org/IService1/GetCarModelsResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarModelType>> GetCarModelsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SaveJudgement", ReplyAction="http://tempuri.org/IService1/SaveJudgementResponse")]
+        System.Threading.Tasks.Task SaveJudgementAsync(JudgeApp.ServiceRef.CarJudgementType carJudgement);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -180,6 +738,10 @@ namespace JudgeApp.ServiceRef {
         
         public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarModelType>> GetCarModelsAsync() {
             return base.Channel.GetCarModelsAsync();
+        }
+        
+        public System.Threading.Tasks.Task SaveJudgementAsync(JudgeApp.ServiceRef.CarJudgementType carJudgement) {
+            return base.Channel.SaveJudgementAsync(carJudgement);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync() {

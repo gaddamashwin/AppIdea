@@ -1,5 +1,6 @@
-﻿using JudgeApp.Data;
+﻿//using JudgeApp.Data;
 
+using JudgeApp.DataModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -38,7 +39,7 @@ namespace JudgeApp
         /// </param>
         /// <param name="pageState">A dictionary of state preserved by this page during an earlier
         /// session.  This will be null the first time a page is visited.</param>
-        protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
+        protected override async void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             // Allow saved page state to override the initial item to display
             if (pageState != null && pageState.ContainsKey("SelectedItem"))
@@ -47,10 +48,11 @@ namespace JudgeApp
             }
 
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var item = SampleDataSource.GetItem((String)navigationParameter);
-            this.DefaultViewModel["Group"] = item.Group;
-            this.DefaultViewModel["Items"] = item.Group.Items;
-            this.flipView.SelectedItem = item;
+            var item = await AppIdeaDataSource.GetCarModel((int)navigationParameter);
+            item.carJudgement.AccessoriesInterior = 3;
+            this.DefaultViewModel["Group"] = item;
+            this.DefaultViewModel["Items"] = item.carJudgement;
+            //this.flipView.SelectedItem = item;
         }
 
         /// <summary>
@@ -61,8 +63,8 @@ namespace JudgeApp
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
-            var selectedItem = (SampleDataItem)this.flipView.SelectedItem;
-            pageState["SelectedItem"] = selectedItem.UniqueId;
+            //var selectedItem = (SampleDataItem)this.flipView.SelectedItem;
+            //pageState["SelectedItem"] = selectedItem.UniqueId;
         }
     }
 }

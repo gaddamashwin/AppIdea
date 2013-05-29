@@ -135,4 +135,103 @@ namespace JudgeApp.DataModel
             await db.InsertAllAsync(r2.Select(i => Helper.CopyProperties<CarModel>(i)));
         }
     }
+
+    public class AppIdeaDataSource
+    {
+        private static IEnumerable<Car> cars;
+        private static IEnumerable<CarModel> carmodels;
+        private static List<CarCarModels> carModelCars;
+        /// <summary>
+        /// All the cars
+        /// </summary>
+        /// <returns></returns>
+        private static async Task<IEnumerable<Car>> Cars()
+        {
+            if (cars == null)
+            {
+                var db = new SQLiteAsyncConnection(Helper.SQLitePath);
+                cars = await db.QueryAsync<Car>("select * from Car");
+                if (!cars.Any())
+                {
+                    var tmpcars = await Helper.appService.GetCarsAsync();
+                    cars = tmpcars.Select(i => Helper.CopyProperties<Car>(i));
+                    await db.InsertAllAsync(cars);
+                }
+            }
+            return cars;
+        }
+        /// <summary>
+        /// All CarModels
+        /// </summary>
+        /// <returns></returns>
+        private static async Task<IEnumerable<CarModel>> CarModels()
+        {
+            if (carmodels == null)
+            {
+                var db = new SQLiteAsyncConnection(Helper.SQLitePath);
+                carmodels = await db.QueryAsync<CarModel>("SELECT * FROM CarModel");
+                if (!carmodels.Any())
+                {
+                    var tmpcarmodels = await Helper.appService.GetCarModelsAsync();
+                    carmodels = tmpcarmodels.Select(i => Helper.CopyProperties<CarModel>(i));
+                    await db.InsertAllAsync(carmodels);
+                }
+            }
+            return carmodels;
+        }
+
+        /// <summary>
+        /// Data Source for Grouped Items
+        /// </summary>
+        /// <returns>List of all car models with top 8 cars</returns>
+        public static async Task<IEnumerable<CarCarModels>> GetCarModelsandCars()
+        {
+            if (carModelCars == null || carModelCars.Count() == 0)
+            {
+                var data = await Cars();
+                var data2 = await CarModels();
+
+                carModelCars = new List<CarCarModels>();
+                foreach (var item in data.GroupBy(i => i.CarID))
+                {
+                    CarCarModels sector = Helper.CopyProperties<CarCarModels>(data.Where(i => i.CarID == item.Key).FirstOrDefault());
+                    sector.AppItems = (from sec in data
+                                      join app in data2 on sec.CarID equals app.CarID
+                                      where sec.CarID == sector.CarID
+                                      select app);
+                    sector.AppItems = sector.AppItems.Select(app => { app.CarNameWithModel =  sector.CarName + " " + app.CarModelName; return app; });
+                    sector.count = item.Count().ToString();
+                    carModelCars.Add(sector);
+                }
+            }
+            return carModelCars;
+        }
+
+        /// <summary>
+        /// Data Source for Group Detail
+        /// </summary>
+        /// <param name="sectorID">ID of the Group</param>
+        /// <returns>All the App Data for the group</returns>
+        public static CarCarModels GetCar(int carID)
+        {
+            return carModelCars.Where(i => i.CarID == carID).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// Data source for Item Details(ItemDetailPage.xaml)
+        /// </summary>
+        /// <param name="AppID">AppID of the selected item</param>
+        /// <returns>AppData for the AppID is returned</returns>
+        public static async Task<CarModelcar> GetCarModel(int carModelID)
+        {
+            var data = await CarModels();
+            var result = data.Where(i => i.CarModelID == carModelID).Select(i => Helper.CopyProperties<CarModelcar>(i)).FirstOrDefault();
+
+            var data2 = await Cars();
+            result.car = (from appdetails in data2
+                                where appdetails.CarID.Equals(result.CarID)
+                                select appdetails).FirstOrDefault();
+            return result;
+        }
+    }
 }

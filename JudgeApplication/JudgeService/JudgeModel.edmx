@@ -4,11 +4,53 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="JudgeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="JudgeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="JudgeModelStoreContainer">
+          <EntitySet Name="CarJudgement" EntityType="JudgeModel.Store.CarJudgement" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CarModel" EntityType="JudgeModel.Store.CarModel" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Cars" EntityType="JudgeModel.Store.Cars" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
+        <EntityType Name="CarJudgement">
+          <Key>
+            <PropertyRef Name="CarJudgementID" />
+          </Key>
+          <Property Name="CarId" Type="int" />
+          <Property Name="OverAllExterior" Type="int" />
+          <Property Name="FitNFinishExterior" Type="int" />
+          <Property Name="UniquenessOfProductExterior" Type="int" />
+          <Property Name="OneOfCustomizationsExterior" Type="int" />
+          <Property Name="PaintCleanlinessExterior" Type="int" />
+          <Property Name="PaintApperanceExterior" Type="int" />
+          <Property Name="PaintCompletenessExterior" Type="int" />
+          <Property Name="PaintOriginalityExterior" Type="int" />
+          <Property Name="CleanlinessEngine" Type="int" />
+          <Property Name="ModificationsEngine" Type="int" />
+          <Property Name="AccessoriesEngine" Type="int" />
+          <Property Name="UniquenessOfProductsEngine" Type="int" />
+          <Property Name="OneOfCustomizationsEngine" Type="int" />
+          <Property Name="CleanlinessUCDetails" Type="int" />
+          <Property Name="PaintOrPowercoatUCDetails" Type="int" />
+          <Property Name="BreaksUCPerformance" Type="int" />
+          <Property Name="SuspensionUCPerformance" Type="int" />
+          <Property Name="CleanlinessWheels" Type="int" />
+          <Property Name="AppearanceWheels" Type="int" />
+          <Property Name="UniquenessOfProductsWheels" Type="int" />
+          <Property Name="OverallTiers" Type="int" />
+          <Property Name="CleanlinessInterior" Type="int" />
+          <Property Name="AccessoriesInterior" Type="int" />
+          <Property Name="UpholsteryInterior" Type="int" />
+          <Property Name="UniquenessOfProductsInterior" Type="int" />
+          <Property Name="SoundICEDetails" Type="int" />
+          <Property Name="ICEICEDetails" Type="int" />
+          <Property Name="UniquenessOfProductsICEDetails" Type="int" />
+          <Property Name="QualityOfInstallICEDetails" Type="int" />
+          <Property Name="UniquenessOfInstallation" Type="int" />
+          <Property Name="OverallAppearanceODetails" Type="int" />
+          <Property Name="DisplayODetails" Type="int" />
+          <Property Name="JudgedByJudgedDetails" Type="nvarchar" MaxLength="50" />
+          <Property Name="JudgedDateJudgedDetails" Type="datetime" />
+          <Property Name="CarJudgementID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
         <EntityType Name="CarModel">
           <Key>
             <PropertyRef Name="CarModelID" />
@@ -24,14 +66,14 @@
           <Property Name="CarID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CarName" Type="varchar" Nullable="false" MaxLength="100" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="JudgeModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="JudgeEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="CarModels" EntityType="JudgeModel.CarModel" />
           <EntitySet Name="Cars" EntityType="JudgeModel.Car" />
+          <EntitySet Name="CarJudgements" EntityType="JudgeModel.CarJudgement" />
         </EntityContainer>
         <EntityType Name="CarModel">
           <Key>
@@ -47,6 +89,47 @@
           </Key>
           <Property Name="CarID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="CarName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CarJudgement">
+          <Key>
+            <PropertyRef Name="CarJudgementID" />
+          </Key>
+          <Property Type="Int32" Name="CarId" />
+          <Property Type="Int32" Name="OverAllExterior" />
+          <Property Type="Int32" Name="FitNFinishExterior" />
+          <Property Type="Int32" Name="UniquenessOfProductExterior" />
+          <Property Type="Int32" Name="OneOfCustomizationsExterior" />
+          <Property Type="Int32" Name="PaintCleanlinessExterior" />
+          <Property Type="Int32" Name="PaintApperanceExterior" />
+          <Property Type="Int32" Name="PaintCompletenessExterior" />
+          <Property Type="Int32" Name="PaintOriginalityExterior" />
+          <Property Type="Int32" Name="CleanlinessEngine" />
+          <Property Type="Int32" Name="ModificationsEngine" />
+          <Property Type="Int32" Name="AccessoriesEngine" />
+          <Property Type="Int32" Name="UniquenessOfProductsEngine" />
+          <Property Type="Int32" Name="OneOfCustomizationsEngine" />
+          <Property Type="Int32" Name="CleanlinessUCDetails" />
+          <Property Type="Int32" Name="PaintOrPowercoatUCDetails" />
+          <Property Type="Int32" Name="BreaksUCPerformance" />
+          <Property Type="Int32" Name="SuspensionUCPerformance" />
+          <Property Type="Int32" Name="CleanlinessWheels" />
+          <Property Type="Int32" Name="AppearanceWheels" />
+          <Property Type="Int32" Name="UniquenessOfProductsWheels" />
+          <Property Type="Int32" Name="OverallTiers" />
+          <Property Type="Int32" Name="CleanlinessInterior" />
+          <Property Type="Int32" Name="AccessoriesInterior" />
+          <Property Type="Int32" Name="UpholsteryInterior" />
+          <Property Type="Int32" Name="UniquenessOfProductsInterior" />
+          <Property Type="Int32" Name="SoundICEDetails" />
+          <Property Type="Int32" Name="ICEICEDetails" />
+          <Property Type="Int32" Name="UniquenessOfProductsICEDetails" />
+          <Property Type="Int32" Name="QualityOfInstallICEDetails" />
+          <Property Type="Int32" Name="UniquenessOfInstallation" />
+          <Property Type="Int32" Name="OverallAppearanceODetails" />
+          <Property Type="Int32" Name="DisplayODetails" />
+          <Property Type="String" Name="JudgedByJudgedDetails" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="JudgedDateJudgedDetails" Precision="3" />
+          <Property Type="Int32" Name="CarJudgementID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -68,6 +151,48 @@
               <MappingFragment StoreEntitySet="Cars">
                 <ScalarProperty Name="CarID" ColumnName="CarID" />
                 <ScalarProperty Name="CarName" ColumnName="CarName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarJudgements">
+            <EntityTypeMapping TypeName="JudgeModel.CarJudgement">
+              <MappingFragment StoreEntitySet="CarJudgement">
+                <ScalarProperty Name="CarJudgementID" ColumnName="CarJudgementID" />
+                <ScalarProperty Name="JudgedDateJudgedDetails" ColumnName="JudgedDateJudgedDetails" />
+                <ScalarProperty Name="JudgedByJudgedDetails" ColumnName="JudgedByJudgedDetails" />
+                <ScalarProperty Name="DisplayODetails" ColumnName="DisplayODetails" />
+                <ScalarProperty Name="OverallAppearanceODetails" ColumnName="OverallAppearanceODetails" />
+                <ScalarProperty Name="UniquenessOfInstallation" ColumnName="UniquenessOfInstallation" />
+                <ScalarProperty Name="QualityOfInstallICEDetails" ColumnName="QualityOfInstallICEDetails" />
+                <ScalarProperty Name="UniquenessOfProductsICEDetails" ColumnName="UniquenessOfProductsICEDetails" />
+                <ScalarProperty Name="ICEICEDetails" ColumnName="ICEICEDetails" />
+                <ScalarProperty Name="SoundICEDetails" ColumnName="SoundICEDetails" />
+                <ScalarProperty Name="UniquenessOfProductsInterior" ColumnName="UniquenessOfProductsInterior" />
+                <ScalarProperty Name="UpholsteryInterior" ColumnName="UpholsteryInterior" />
+                <ScalarProperty Name="AccessoriesInterior" ColumnName="AccessoriesInterior" />
+                <ScalarProperty Name="CleanlinessInterior" ColumnName="CleanlinessInterior" />
+                <ScalarProperty Name="OverallTiers" ColumnName="OverallTiers" />
+                <ScalarProperty Name="UniquenessOfProductsWheels" ColumnName="UniquenessOfProductsWheels" />
+                <ScalarProperty Name="AppearanceWheels" ColumnName="AppearanceWheels" />
+                <ScalarProperty Name="CleanlinessWheels" ColumnName="CleanlinessWheels" />
+                <ScalarProperty Name="SuspensionUCPerformance" ColumnName="SuspensionUCPerformance" />
+                <ScalarProperty Name="BreaksUCPerformance" ColumnName="BreaksUCPerformance" />
+                <ScalarProperty Name="PaintOrPowercoatUCDetails" ColumnName="PaintOrPowercoatUCDetails" />
+                <ScalarProperty Name="CleanlinessUCDetails" ColumnName="CleanlinessUCDetails" />
+                <ScalarProperty Name="OneOfCustomizationsEngine" ColumnName="OneOfCustomizationsEngine" />
+                <ScalarProperty Name="UniquenessOfProductsEngine" ColumnName="UniquenessOfProductsEngine" />
+                <ScalarProperty Name="AccessoriesEngine" ColumnName="AccessoriesEngine" />
+                <ScalarProperty Name="ModificationsEngine" ColumnName="ModificationsEngine" />
+                <ScalarProperty Name="CleanlinessEngine" ColumnName="CleanlinessEngine" />
+                <ScalarProperty Name="PaintOriginalityExterior" ColumnName="PaintOriginalityExterior" />
+                <ScalarProperty Name="PaintCompletenessExterior" ColumnName="PaintCompletenessExterior" />
+                <ScalarProperty Name="PaintApperanceExterior" ColumnName="PaintApperanceExterior" />
+                <ScalarProperty Name="PaintCleanlinessExterior" ColumnName="PaintCleanlinessExterior" />
+                <ScalarProperty Name="OneOfCustomizationsExterior" ColumnName="OneOfCustomizationsExterior" />
+                <ScalarProperty Name="UniquenessOfProductExterior" ColumnName="UniquenessOfProductExterior" />
+                <ScalarProperty Name="FitNFinishExterior" ColumnName="FitNFinishExterior" />
+                <ScalarProperty Name="OverAllExterior" ColumnName="OverAllExterior" />
+                <ScalarProperty Name="CarId" ColumnName="CarId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

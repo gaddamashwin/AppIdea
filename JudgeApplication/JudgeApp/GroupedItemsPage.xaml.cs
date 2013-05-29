@@ -1,5 +1,4 @@
-﻿using JudgeApp.Data;
-
+﻿using JudgeApp.DataModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -41,7 +40,8 @@ namespace JudgeApp
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
             await DataModel.Helper.InitObjects();
-            var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
+            //var sampleDataGroups = await AppIdeaDataSource.GetCarModel((int)navigationParameter);
+            var sampleDataGroups = await AppIdeaDataSource.GetCarModelsandCars();
             this.DefaultViewModel["Groups"] = sampleDataGroups;
         }
 
@@ -57,7 +57,7 @@ namespace JudgeApp
 
             // Navigate to the appropriate destination page, configuring the new page
             // by passing required information as a navigation parameter
-            this.Frame.Navigate(typeof(GroupDetailPage), ((SampleDataGroup)group).UniqueId);
+            //this.Frame.Navigate(typeof(GroupDetailPage), ((SampleDataGroup)group).UniqueId);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace JudgeApp
         {
             // Navigate to the appropriate destination page, configuring the new page
             // by passing required information as a navigation parameter
-            var itemId = ((SampleDataItem)e.ClickedItem).UniqueId;
+            var itemId = ((CarModel)e.ClickedItem).CarModelID;
             this.Frame.Navigate(typeof(ItemDetailPage), itemId);
         }
     }

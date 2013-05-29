@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-04-19T20:51:10.774</Modified>
+      <Modified>2013-05-29T17:36:53.384</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\JudgeApp.exe">
       <PackagePath>JudgeApp.exe</PackagePath>
-      <Modified>2013-04-19T20:51:07.704</Modified>
+      <Modified>2013-05-29T19:44:16.939</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\JudgeApp.pdb">
       <PackagePath>JudgeApp.pdb</PackagePath>
-      <Modified>2013-04-19T20:51:07.678</Modified>
+      <Modified>2013-05-29T19:44:16.923</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\SQLite.WinRT\3.7.16\Redist\Debug\x64\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
@@ -74,23 +74,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
-      <Modified>2012-06-26T21:19:20.000</Modified>
+      <Modified>2013-05-29T19:44:15.324</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\GroupedItemsPage.xaml">
       <PackagePath>GroupedItemsPage.xaml</PackagePath>
-      <Modified>2013-04-19T20:33:18.069</Modified>
+      <Modified>2013-05-28T20:29:41.616</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\GroupDetailPage.xaml">
       <PackagePath>GroupDetailPage.xaml</PackagePath>
-      <Modified>2013-04-19T20:14:28.077</Modified>
+      <Modified>2013-05-28T18:25:31.467</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\ItemDetailPage.xaml">
       <PackagePath>ItemDetailPage.xaml</PackagePath>
-      <Modified>2013-04-18T18:08:15.404</Modified>
+      <Modified>2013-05-29T19:44:11.324</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-04-19T20:51:09.885</Modified>
+      <Modified>2013-05-29T17:36:52.594</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

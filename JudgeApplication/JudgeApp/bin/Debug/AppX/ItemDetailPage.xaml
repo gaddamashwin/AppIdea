@@ -5,21 +5,12 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:JudgeApp"
-    xmlns:data="using:JudgeApp.Data"
+    xmlns:data="using:JudgeApp.DataModel"
     xmlns:common="using:JudgeApp.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Page.Resources>
-
-        <!-- Collection of items displayed by this page -->
-        <CollectionViewSource
-            x:Name="itemsViewSource"
-            Source="{Binding Items}"
-            d:Source="{Binding AllGroups[0].Items, Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}"/>
-    </Page.Resources>
-
+    
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
@@ -27,8 +18,7 @@
     -->
     <Grid
         Style="{StaticResource LayoutRootStyle}"
-        DataContext="{Binding Group}"
-        d:DataContext="{Binding AllGroups[0], Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}">
+        >
 
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
@@ -40,113 +30,117 @@
             one item at a time, allowing the user to flip through all items in the chosen
             group
         -->
-        <FlipView
-            x:Name="flipView"
-            AutomationProperties.AutomationId="ItemsFlipView"
-            AutomationProperties.Name="Item Details"
-            TabIndex="1"
-            Grid.RowSpan="2"
-            ItemsSource="{Binding Source={StaticResource itemsViewSource}}">
+        <Grid Grid.Row="2" DataContext="{Binding Items}" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="230"/>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="230"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <!--<TextBlock Style="{StaticResource BodyTextStyle}" Text="Accessories Engine" Grid.Row="0" Grid.Column="1"/>
+            <Slider Value="{Binding AccessoriesEngine}" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="0" TickFrequency="1" Grid.Column="2"></Slider>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="AccessoriesInterior" Grid.Row="1" Grid.Column="1"/>
+            <Slider Value="{Binding AccessoriesInterior}" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="1" TickFrequency="1" Grid.Column="2"></Slider>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="AppearanceWheels" Grid.Row="2" Grid.Column="1"/>
+            <Slider Value="{Binding AppearanceWheels}" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="2" TickFrequency="1" Grid.Column="2"></Slider>-->
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Accessories Engine" Grid.Row="0" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Accessories Interior" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Appearance Wheels" Grid.Row="2" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Breaks UC Performance" Grid.Row="3" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Cleanliness Engine" Grid.Row="4" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Cleanliness Interior" Grid.Row="5" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Cleanliness UC Details" Grid.Row="6" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Cleanliness Wheels" Grid.Row="7" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Display O Details" Grid.Row="8" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Fit N Finish Exterior" Grid.Row="9" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="ICEICE Details" Grid.Row="10" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Modifications Engine" Grid.Row="11" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="One Of Customizations Engine" Grid.Row="12" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="One Of Customizations Exterior" Grid.Row="13" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Overall Appearance O Details" Grid.Row="14" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Over All Exterior" Grid.Row="15" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Over all Tiers" Grid.Row="16" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Paint Apperance Exterior" Grid.Row="17" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Paint Cleanliness Exterior" Grid.Row="0" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Paint Completeness Exterior" Grid.Row="1" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Paint Originality Exterior" Grid.Row="2" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Paint Or Powercoat UC Details" Grid.Row="3" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Quality Of Install ICE Details" Grid.Row="4" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Sound ICE Details" Grid.Row="5" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Suspension UC Performance" Grid.Row="6" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Uniqueness Of Installation" Grid.Row="7" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Uniqueness Of Product Exterior" Grid.Row="8" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Uniqueness Of Products Engine" Grid.Row="9" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Uniqueness Of Products ICE Details" Grid.Row="10" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Uniqueness Of Products Interior" Grid.Row="11" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Uniqueness Of Products Wheels" Grid.Row="12" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource BodyTextStyle}" Text="Upholstery Interior" Grid.Row="13" Grid.Column="4"/>
 
-            <FlipView.ItemContainerStyle>
-                <Style TargetType="FlipViewItem">
-                    <Setter Property="Margin" Value="0,137,0,0"/>
-                </Style>
-            </FlipView.ItemContainerStyle>
-
-            <FlipView.ItemTemplate>
-                <DataTemplate>
-
-                    <!--
-                        UserControl chosen as the templated item because it supports visual state management
-                        Loaded/unloaded events explicitly subscribe to view state updates from the page
-                    -->
-                    <UserControl x:ConnectionId='2'                                                         >
-                        <ScrollViewer x:Name="scrollViewer" Style="{StaticResource HorizontalScrollViewerStyle}" Grid.Row="1">
-
-                            <!-- Content is allowed to flow across as many columns as needed -->
-                            <common:RichTextColumns x:Name="richTextColumns" Margin="117,0,117,47">
-                                <RichTextBlock x:Name="richTextBlock" Width="560" Style="{StaticResource ItemRichTextStyle}" IsTextSelectionEnabled="False">
-                                    <Paragraph>
-                                        <Run FontSize="26.667" FontWeight="Light" Text="{Binding Title}"/>
-                                        <LineBreak/>
-                                        <LineBreak/>
-                                        <Run FontWeight="Normal" Text="{Binding Subtitle}"/>
-                                    </Paragraph>
-                                    <Paragraph LineStackingStrategy="MaxHeight">
-                                        <InlineUIContainer>
-                                            <Image x:Name="image" MaxHeight="480" Margin="0,20,0,10" Stretch="Uniform" Source="{Binding Image}" AutomationProperties.Name="{Binding Title}"/>
-                                        </InlineUIContainer>
-                                    </Paragraph>
-                                    <Paragraph>
-                                        <Run FontWeight="SemiLight" Text="{Binding Content}"/>
-                                    </Paragraph>
-                                </RichTextBlock>
-
-                                <!-- Additional columns are created from this template -->
-                                <common:RichTextColumns.ColumnTemplate>
-                                    <DataTemplate>
-                                        <RichTextBlockOverflow Width="560" Margin="80,0,0,0">
-                                            <RichTextBlockOverflow.RenderTransform>
-                                                <TranslateTransform X="-1" Y="4"/>
-                                            </RichTextBlockOverflow.RenderTransform>
-                                        </RichTextBlockOverflow>
-                                    </DataTemplate>
-                                </common:RichTextColumns.ColumnTemplate>
-                            </common:RichTextColumns>
-
-                            <VisualStateManager.VisualStateGroups>
-
-                                <!-- Visual states reflect the application's view state inside the FlipView -->
-                                <VisualStateGroup x:Name="ApplicationViewStates">
-                                    <VisualState x:Name="FullScreenLandscape"/>
-                                    <VisualState x:Name="Filled"/>
-
-                                    <!-- Respect the narrower 100-pixel margin convention for portrait -->
-                                    <VisualState x:Name="FullScreenPortrait">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="richTextColumns" Storyboard.TargetProperty="Margin">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="97,0,87,57"/>
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="MaxHeight">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="400"/>
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-
-                                    <!-- When snapped, the content is reformatted and scrolls vertically -->
-                                    <VisualState x:Name="Snapped">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="richTextColumns" Storyboard.TargetProperty="Margin">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="17,0,17,57"/>
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="scrollViewer" Storyboard.TargetProperty="Style">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource VerticalScrollViewerStyle}"/>
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="richTextBlock" Storyboard.TargetProperty="Width">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="280"/>
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="MaxHeight">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="160"/>
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                        </ScrollViewer>
-                    </UserControl>
-                </DataTemplate>
-            </FlipView.ItemTemplate>
-        </FlipView>
-
+            <Slider Value="{Binding AccessoriesEngine}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="0" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding AccessoriesInterior}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="1" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding AppearanceWheels}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="2" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding BreaksUCPerformance}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="3" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding CleanlinessEngine}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="4" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding CleanlinessInterior}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="5" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding CleanlinessUCDetails}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="6" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding CleanlinessWheels}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="7" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding DisplayODetails}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="8" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding FitNFinishExterior}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="9" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding ICEICEDetails}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="10" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding ModificationsEngine}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="11" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding OneOfCustomizationsEngine}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="12" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding OneOfCustomizationsExterior}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="13" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding OverallAppearanceODetails}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="14" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding OverAllExterior}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="15" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding OverallTiers}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="16" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding PaintApperanceExterior}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="17" TickFrequency="1" Grid.Column="2"></Slider>
+            <Slider Value="{Binding PaintCleanlinessExterior}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="0" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding PaintCompletenessExterior}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="1" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding PaintOriginalityExterior}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="2" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding PaintOrPowercoatUCDetails}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="3" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding QualityOfInstallICEDetails}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="4" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding SoundICEDetails}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="5" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding SuspensionUCPerformance}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="6" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding UniquenessOfInstallation}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="7" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding UniquenessOfProductExterior}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="8" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding UniquenessOfProductsEngine}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="9" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding UniquenessOfProductsICEDetails}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="10" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding UniquenessOfProductsInterior}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="11" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding UniquenessOfProductsWheels}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="12" TickFrequency="1" Grid.Column="5"></Slider>
+            <Slider Value="{Binding UpholsteryInterior}" VerticalAlignment="Top" Maximum="5" Minimum="0" StepFrequency="1" Height="25" Grid.Row="13" TickFrequency="1" Grid.Column="5"></Slider>
+        </Grid>
+        
         <!-- Back button and page title -->
-        <Grid>
+        <Grid DataContext="{Binding Group}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:ConnectionId='1' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Text="{Binding Title}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" IsHitTestVisible="false"/>
+            <TextBlock x:Name="pageTitle" Text="{Binding CarNameWithModel}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" IsHitTestVisible="false"/>
         </Grid>
 
         <VisualStateManager.VisualStateGroups>

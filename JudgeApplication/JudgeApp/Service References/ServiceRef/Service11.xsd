@@ -27,4 +27,45 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CarModelType" nillable="true" type="tns:CarModelType" />
+  <xs:complexType name="CarJudgementType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessoriesEngine" type="xs:int" />
+      <xs:element minOccurs="0" name="AccessoriesInterior" type="xs:int" />
+      <xs:element minOccurs="0" name="AppearanceWheels" type="xs:int" />
+      <xs:element minOccurs="0" name="BreaksUCPerformance" type="xs:int" />
+      <xs:element minOccurs="0" name="CarId" type="xs:int" />
+      <xs:element minOccurs="0" name="CarJudgementID" type="xs:int" />
+      <xs:element minOccurs="0" name="CleanlinessEngine" type="xs:int" />
+      <xs:element minOccurs="0" name="CleanlinessInterior" type="xs:int" />
+      <xs:element minOccurs="0" name="CleanlinessUCDetails" type="xs:int" />
+      <xs:element minOccurs="0" name="CleanlinessWheels" type="xs:int" />
+      <xs:element minOccurs="0" name="DisplayODetails" type="xs:int" />
+      <xs:element minOccurs="0" name="FitNFinishExterior" type="xs:int" />
+      <xs:element minOccurs="0" name="ICEICEDetails" type="xs:int" />
+      <xs:element minOccurs="0" name="JudgedByJudgedDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JudgedDateJudgedDetails" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModificationsEngine" type="xs:int" />
+      <xs:element minOccurs="0" name="OneOfCustomizationsEngine" type="xs:int" />
+      <xs:element minOccurs="0" name="OneOfCustomizationsExterior" type="xs:int" />
+      <xs:element minOccurs="0" name="OverAllExterior" type="xs:int" />
+      <xs:element minOccurs="0" name="OverallAppearanceODetails" type="xs:int" />
+      <xs:element minOccurs="0" name="OverallTiers" type="xs:int" />
+      <xs:element minOccurs="0" name="PaintApperanceExterior" type="xs:int" />
+      <xs:element minOccurs="0" name="PaintCleanlinessExterior" type="xs:int" />
+      <xs:element minOccurs="0" name="PaintCompletenessExterior" type="xs:int" />
+      <xs:element minOccurs="0" name="PaintOrPowercoatUCDetails" type="xs:int" />
+      <xs:element minOccurs="0" name="PaintOriginalityExterior" type="xs:int" />
+      <xs:element minOccurs="0" name="QualityOfInstallICEDetails" type="xs:int" />
+      <xs:element minOccurs="0" name="SoundICEDetails" type="xs:int" />
+      <xs:element minOccurs="0" name="SuspensionUCPerformance" type="xs:int" />
+      <xs:element minOccurs="0" name="UniquenessOfInstallation" type="xs:int" />
+      <xs:element minOccurs="0" name="UniquenessOfProductExterior" type="xs:int" />
+      <xs:element minOccurs="0" name="UniquenessOfProductsEngine" type="xs:int" />
+      <xs:element minOccurs="0" name="UniquenessOfProductsICEDetails" type="xs:int" />
+      <xs:element minOccurs="0" name="UniquenessOfProductsInterior" type="xs:int" />
+      <xs:element minOccurs="0" name="UniquenessOfProductsWheels" type="xs:int" />
+      <xs:element minOccurs="0" name="UpholsteryInterior" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarJudgementType" nillable="true" type="tns:CarJudgementType" />
 </xs:schema>

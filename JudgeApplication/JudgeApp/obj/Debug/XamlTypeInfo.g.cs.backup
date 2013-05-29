@@ -118,9 +118,7 @@ namespace JudgeApp.JudgeApp_XamlTypeInfo
 
         private object Activate_2_GroupDetailPage() { return new global::JudgeApp.GroupDetailPage(); }
 
-        private object Activate_3_RichTextColumns() { return new global::JudgeApp.Common.RichTextColumns(); }
-
-        private object Activate_4_ItemDetailPage() { return new global::JudgeApp.ItemDetailPage(); }
+        private object Activate_3_ItemDetailPage() { return new global::JudgeApp.ItemDetailPage(); }
 
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(string typeName)
@@ -136,18 +134,6 @@ namespace JudgeApp.JudgeApp_XamlTypeInfo
 
             case "Windows.UI.Xaml.Controls.UserControl":
                 xamlType = new global::JudgeApp.JudgeApp_XamlTypeInfo.XamlSystemBaseType(typeName, typeof(global::Windows.UI.Xaml.Controls.UserControl));
-                break;
-
-            case "Windows.UI.Xaml.Controls.Panel":
-                xamlType = new global::JudgeApp.JudgeApp_XamlTypeInfo.XamlSystemBaseType(typeName, typeof(global::Windows.UI.Xaml.Controls.Panel));
-                break;
-
-            case "Windows.UI.Xaml.Controls.RichTextBlock":
-                xamlType = new global::JudgeApp.JudgeApp_XamlTypeInfo.XamlSystemBaseType(typeName, typeof(global::Windows.UI.Xaml.Controls.RichTextBlock));
-                break;
-
-            case "Windows.UI.Xaml.DataTemplate":
-                xamlType = new global::JudgeApp.JudgeApp_XamlTypeInfo.XamlSystemBaseType(typeName, typeof(global::Windows.UI.Xaml.DataTemplate));
                 break;
 
             case "JudgeApp.Common.LayoutAwarePage":
@@ -168,18 +154,9 @@ namespace JudgeApp.JudgeApp_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case "JudgeApp.Common.RichTextColumns":
-                userType = new global::JudgeApp.JudgeApp_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::JudgeApp.Common.RichTextColumns), GetXamlTypeByName("Windows.UI.Xaml.Controls.Panel"));
-                userType.Activator = Activate_3_RichTextColumns;
-                userType.SetContentPropertyName("JudgeApp.Common.RichTextColumns.RichTextContent");
-                userType.AddMemberName("RichTextContent");
-                userType.AddMemberName("ColumnTemplate");
-                xamlType = userType;
-                break;
-
             case "JudgeApp.ItemDetailPage":
                 userType = new global::JudgeApp.JudgeApp_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::JudgeApp.ItemDetailPage), GetXamlTypeByName("JudgeApp.Common.LayoutAwarePage"));
-                userType.Activator = Activate_4_ItemDetailPage;
+                userType.Activator = Activate_3_ItemDetailPage;
                 xamlType = userType;
                 break;
 
@@ -188,49 +165,11 @@ namespace JudgeApp.JudgeApp_XamlTypeInfo
         }
 
 
-        private object get_0_RichTextColumns_RichTextContent(object instance)
-        {
-            var that = (global::JudgeApp.Common.RichTextColumns)instance;
-            return that.RichTextContent;
-        }
-        private void set_0_RichTextColumns_RichTextContent(object instance, object Value)
-        {
-            var that = (global::JudgeApp.Common.RichTextColumns)instance;
-            that.RichTextContent = (global::Windows.UI.Xaml.Controls.RichTextBlock)Value;
-        }
-        private object get_1_RichTextColumns_ColumnTemplate(object instance)
-        {
-            var that = (global::JudgeApp.Common.RichTextColumns)instance;
-            return that.ColumnTemplate;
-        }
-        private void set_1_RichTextColumns_ColumnTemplate(object instance, object Value)
-        {
-            var that = (global::JudgeApp.Common.RichTextColumns)instance;
-            that.ColumnTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
-        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::JudgeApp.JudgeApp_XamlTypeInfo.XamlMember xamlMember = null;
-            global::JudgeApp.JudgeApp_XamlTypeInfo.XamlUserType userType;
-
-            switch (longMemberName)
-            {
-            case "JudgeApp.Common.RichTextColumns.RichTextContent":
-                userType = (global::JudgeApp.JudgeApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JudgeApp.Common.RichTextColumns");
-                xamlMember = new global::JudgeApp.JudgeApp_XamlTypeInfo.XamlMember(this, "RichTextContent", "Windows.UI.Xaml.Controls.RichTextBlock");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_0_RichTextColumns_RichTextContent;
-                xamlMember.Setter = set_0_RichTextColumns_RichTextContent;
-                break;
-            case "JudgeApp.Common.RichTextColumns.ColumnTemplate":
-                userType = (global::JudgeApp.JudgeApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JudgeApp.Common.RichTextColumns");
-                xamlMember = new global::JudgeApp.JudgeApp_XamlTypeInfo.XamlMember(this, "ColumnTemplate", "Windows.UI.Xaml.DataTemplate");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_1_RichTextColumns_ColumnTemplate;
-                xamlMember.Setter = set_1_RichTextColumns_ColumnTemplate;
-                break;
-            }
+            // No Local Properties
             return xamlMember;
         }
 

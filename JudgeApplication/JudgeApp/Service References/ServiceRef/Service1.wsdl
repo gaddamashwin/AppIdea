@@ -19,6 +19,12 @@
   <wsdl:message name="IService1_GetCarModels_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCarModelsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_SaveJudgement_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveJudgement" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SaveJudgement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveJudgementResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetCars">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCars" message="tns:IService1_GetCars_InputMessage" />
@@ -27,6 +33,10 @@
     <wsdl:operation name="GetCarModels">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCarModels" message="tns:IService1_GetCarModels_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCarModelsResponse" message="tns:IService1_GetCarModels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveJudgement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SaveJudgement" message="tns:IService1_SaveJudgement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SaveJudgementResponse" message="tns:IService1_SaveJudgement_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -42,6 +52,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetCarModels">
       <soap:operation soapAction="http://tempuri.org/IService1/GetCarModels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveJudgement">
+      <soap:operation soapAction="http://tempuri.org/IService1/SaveJudgement" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

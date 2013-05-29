@@ -50,5 +50,14 @@ namespace JudgeService
             }
             return dst;
         }
+
+
+        public void SaveJudgement(CarJudgementType carJudgement)
+        {
+            JudgeEntities ent = new JudgeEntities();
+            var result= CopyProperties<CarJudgement>(carJudgement);
+            ent.CarJudgements.Add(result);
+            ent.SaveChanges();
+        }
     }
 }

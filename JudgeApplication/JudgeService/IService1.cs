@@ -17,6 +17,9 @@ namespace JudgeService
 
         [OperationContract]
         IEnumerable<CarModelType> GetCarModels();
+
+        [OperationContract]
+        void SaveJudgement(CarJudgementType carJudgement);
     }
 
     [DataContract]
@@ -37,5 +40,82 @@ namespace JudgeService
         public int CarID { get; set; }
         [DataMember]
         public string CarName { get; set; }
+    }
+
+    [DataContract]
+    public class CarJudgementType
+    {
+        [DataMember]
+        public int CarId { get; set; }
+        [DataMember]
+        public int OverAllExterior { get; set; }
+        [DataMember]
+        public int FitNFinishExterior { get; set; }
+        [DataMember]
+        public int UniquenessOfProductExterior { get; set; }
+        [DataMember]
+        public int OneOfCustomizationsExterior { get; set; }
+        [DataMember]
+        public int PaintCleanlinessExterior { get; set; }
+        [DataMember]
+        public int PaintApperanceExterior { get; set; }
+        [DataMember]
+        public int PaintCompletenessExterior { get; set; }
+        [DataMember]
+        public int PaintOriginalityExterior { get; set; }
+        [DataMember]
+        public int CleanlinessEngine { get; set; }
+        [DataMember]
+        public int ModificationsEngine { get; set; }
+        [DataMember]
+        public int AccessoriesEngine { get; set; }
+        [DataMember]
+        public int UniquenessOfProductsEngine { get; set; }
+        [DataMember]
+        public int OneOfCustomizationsEngine { get; set; }
+        [DataMember]
+        public int CleanlinessUCDetails { get; set; }
+        [DataMember]
+        public int PaintOrPowercoatUCDetails { get; set; }
+        [DataMember]
+        public int BreaksUCPerformance { get; set; }
+        [DataMember]
+        public int SuspensionUCPerformance { get; set; }
+        [DataMember]
+        public int CleanlinessWheels { get; set; }
+        [DataMember]
+        public int AppearanceWheels { get; set; }
+        [DataMember]
+        public int UniquenessOfProductsWheels { get; set; }
+        [DataMember]
+        public int OverallTiers { get; set; }
+        [DataMember]
+        public int CleanlinessInterior { get; set; }
+        [DataMember]
+        public int AccessoriesInterior { get; set; }
+        [DataMember]
+        public int UpholsteryInterior { get; set; }
+        [DataMember]
+        public int UniquenessOfProductsInterior { get; set; }
+        [DataMember]
+        public int SoundICEDetails { get; set; }
+        [DataMember]
+        public int ICEICEDetails { get; set; }
+        [DataMember]
+        public int UniquenessOfProductsICEDetails { get; set; }
+        [DataMember]
+        public int QualityOfInstallICEDetails { get; set; }
+        [DataMember]
+        public int UniquenessOfInstallation { get; set; }
+        [DataMember]
+        public int OverallAppearanceODetails { get; set; }
+        [DataMember]
+        public int DisplayODetails { get; set; }
+        [DataMember]
+        public string JudgedByJudgedDetails { get; set; }
+        [DataMember]
+        public DateTime JudgedDateJudgedDetails { get; set; }
+        [DataMember]
+        public int CarJudgementID { get; set; }
     }
 }

@@ -3,6 +3,7 @@
   <EntityContainer Name="JudgeEntities" p1:LazyLoadingEnabled="true">
     <EntitySet Name="CarModels" EntityType="JudgeModel.CarModel" />
     <EntitySet Name="Cars" EntityType="JudgeModel.Car" />
+    <EntitySet Name="CarJudgements" EntityType="JudgeModel.CarJudgement" />
   </EntityContainer>
   <EntityType Name="CarModel">
     <Key>
@@ -18,5 +19,46 @@
     </Key>
     <Property Name="CarID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="CarName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CarJudgement">
+    <Key>
+      <PropertyRef Name="CarJudgementID" />
+    </Key>
+    <Property Type="Int32" Name="CarId" />
+    <Property Type="Int32" Name="OverAllExterior" />
+    <Property Type="Int32" Name="FitNFinishExterior" />
+    <Property Type="Int32" Name="UniquenessOfProductExterior" />
+    <Property Type="Int32" Name="OneOfCustomizationsExterior" />
+    <Property Type="Int32" Name="PaintCleanlinessExterior" />
+    <Property Type="Int32" Name="PaintApperanceExterior" />
+    <Property Type="Int32" Name="PaintCompletenessExterior" />
+    <Property Type="Int32" Name="PaintOriginalityExterior" />
+    <Property Type="Int32" Name="CleanlinessEngine" />
+    <Property Type="Int32" Name="ModificationsEngine" />
+    <Property Type="Int32" Name="AccessoriesEngine" />
+    <Property Type="Int32" Name="UniquenessOfProductsEngine" />
+    <Property Type="Int32" Name="OneOfCustomizationsEngine" />
+    <Property Type="Int32" Name="CleanlinessUCDetails" />
+    <Property Type="Int32" Name="PaintOrPowercoatUCDetails" />
+    <Property Type="Int32" Name="BreaksUCPerformance" />
+    <Property Type="Int32" Name="SuspensionUCPerformance" />
+    <Property Type="Int32" Name="CleanlinessWheels" />
+    <Property Type="Int32" Name="AppearanceWheels" />
+    <Property Type="Int32" Name="UniquenessOfProductsWheels" />
+    <Property Type="Int32" Name="OverallTiers" />
+    <Property Type="Int32" Name="CleanlinessInterior" />
+    <Property Type="Int32" Name="AccessoriesInterior" />
+    <Property Type="Int32" Name="UpholsteryInterior" />
+    <Property Type="Int32" Name="UniquenessOfProductsInterior" />
+    <Property Type="Int32" Name="SoundICEDetails" />
+    <Property Type="Int32" Name="ICEICEDetails" />
+    <Property Type="Int32" Name="UniquenessOfProductsICEDetails" />
+    <Property Type="Int32" Name="QualityOfInstallICEDetails" />
+    <Property Type="Int32" Name="UniquenessOfInstallation" />
+    <Property Type="Int32" Name="OverallAppearanceODetails" />
+    <Property Type="Int32" Name="DisplayODetails" />
+    <Property Type="String" Name="JudgedByJudgedDetails" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="JudgedDateJudgedDetails" Precision="3" />
+    <Property Type="Int32" Name="CarJudgementID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
 </Schema>

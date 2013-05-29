@@ -27,5 +27,6 @@ namespace JudgeService
     
         public DbSet<CarModel> CarModels { get; set; }
         public DbSet<Car> Cars { get; set; }
+        public DbSet<CarJudgement> CarJudgements { get; set; }
     }
 }

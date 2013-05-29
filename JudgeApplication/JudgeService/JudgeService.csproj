@@ -72,6 +72,9 @@
     <Compile Include="Car.cs">
       <DependentUpon>JudgeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CarJudgement.cs">
+      <DependentUpon>JudgeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CarModel.cs">
       <DependentUpon>JudgeModel.tt</DependentUpon>
     </Compile>

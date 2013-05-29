@@ -7,6 +7,7 @@
       <Diagram DiagramId="962c1d9813ee4712838302efc84815d6" Name="Diagram1">
         <EntityTypeShape EntityType="JudgeModel.CarModel" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="JudgeModel.Car" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JudgeModel.CarJudgement" Width="3" PointX="4.625" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

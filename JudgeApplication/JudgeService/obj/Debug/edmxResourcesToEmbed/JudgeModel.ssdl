@@ -1,9 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="JudgeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="JudgeModelStoreContainer">
+    <EntitySet Name="CarJudgement" EntityType="JudgeModel.Store.CarJudgement" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CarModel" EntityType="JudgeModel.Store.CarModel" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Cars" EntityType="JudgeModel.Store.Cars" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
+  <EntityType Name="CarJudgement">
+    <Key>
+      <PropertyRef Name="CarJudgementID" />
+    </Key>
+    <Property Name="CarId" Type="int" />
+    <Property Name="OverAllExterior" Type="int" />
+    <Property Name="FitNFinishExterior" Type="int" />
+    <Property Name="UniquenessOfProductExterior" Type="int" />
+    <Property Name="OneOfCustomizationsExterior" Type="int" />
+    <Property Name="PaintCleanlinessExterior" Type="int" />
+    <Property Name="PaintApperanceExterior" Type="int" />
+    <Property Name="PaintCompletenessExterior" Type="int" />
+    <Property Name="PaintOriginalityExterior" Type="int" />
+    <Property Name="CleanlinessEngine" Type="int" />
+    <Property Name="ModificationsEngine" Type="int" />
+    <Property Name="AccessoriesEngine" Type="int" />
+    <Property Name="UniquenessOfProductsEngine" Type="int" />
+    <Property Name="OneOfCustomizationsEngine" Type="int" />
+    <Property Name="CleanlinessUCDetails" Type="int" />
+    <Property Name="PaintOrPowercoatUCDetails" Type="int" />
+    <Property Name="BreaksUCPerformance" Type="int" />
+    <Property Name="SuspensionUCPerformance" Type="int" />
+    <Property Name="CleanlinessWheels" Type="int" />
+    <Property Name="AppearanceWheels" Type="int" />
+    <Property Name="UniquenessOfProductsWheels" Type="int" />
+    <Property Name="OverallTiers" Type="int" />
+    <Property Name="CleanlinessInterior" Type="int" />
+    <Property Name="AccessoriesInterior" Type="int" />
+    <Property Name="UpholsteryInterior" Type="int" />
+    <Property Name="UniquenessOfProductsInterior" Type="int" />
+    <Property Name="SoundICEDetails" Type="int" />
+    <Property Name="ICEICEDetails" Type="int" />
+    <Property Name="UniquenessOfProductsICEDetails" Type="int" />
+    <Property Name="QualityOfInstallICEDetails" Type="int" />
+    <Property Name="UniquenessOfInstallation" Type="int" />
+    <Property Name="OverallAppearanceODetails" Type="int" />
+    <Property Name="DisplayODetails" Type="int" />
+    <Property Name="JudgedByJudgedDetails" Type="nvarchar" MaxLength="50" />
+    <Property Name="JudgedDateJudgedDetails" Type="datetime" />
+    <Property Name="CarJudgementID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
   <EntityType Name="CarModel">
     <Key>
       <PropertyRef Name="CarModelID" />

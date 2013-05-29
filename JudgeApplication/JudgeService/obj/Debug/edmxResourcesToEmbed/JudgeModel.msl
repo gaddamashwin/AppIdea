@@ -18,5 +18,47 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CarJudgements">
+      <EntityTypeMapping TypeName="JudgeModel.CarJudgement">
+        <MappingFragment StoreEntitySet="CarJudgement">
+          <ScalarProperty Name="CarJudgementID" ColumnName="CarJudgementID" />
+          <ScalarProperty Name="JudgedDateJudgedDetails" ColumnName="JudgedDateJudgedDetails" />
+          <ScalarProperty Name="JudgedByJudgedDetails" ColumnName="JudgedByJudgedDetails" />
+          <ScalarProperty Name="DisplayODetails" ColumnName="DisplayODetails" />
+          <ScalarProperty Name="OverallAppearanceODetails" ColumnName="OverallAppearanceODetails" />
+          <ScalarProperty Name="UniquenessOfInstallation" ColumnName="UniquenessOfInstallation" />
+          <ScalarProperty Name="QualityOfInstallICEDetails" ColumnName="QualityOfInstallICEDetails" />
+          <ScalarProperty Name="UniquenessOfProductsICEDetails" ColumnName="UniquenessOfProductsICEDetails" />
+          <ScalarProperty Name="ICEICEDetails" ColumnName="ICEICEDetails" />
+          <ScalarProperty Name="SoundICEDetails" ColumnName="SoundICEDetails" />
+          <ScalarProperty Name="UniquenessOfProductsInterior" ColumnName="UniquenessOfProductsInterior" />
+          <ScalarProperty Name="UpholsteryInterior" ColumnName="UpholsteryInterior" />
+          <ScalarProperty Name="AccessoriesInterior" ColumnName="AccessoriesInterior" />
+          <ScalarProperty Name="CleanlinessInterior" ColumnName="CleanlinessInterior" />
+          <ScalarProperty Name="OverallTiers" ColumnName="OverallTiers" />
+          <ScalarProperty Name="UniquenessOfProductsWheels" ColumnName="UniquenessOfProductsWheels" />
+          <ScalarProperty Name="AppearanceWheels" ColumnName="AppearanceWheels" />
+          <ScalarProperty Name="CleanlinessWheels" ColumnName="CleanlinessWheels" />
+          <ScalarProperty Name="SuspensionUCPerformance" ColumnName="SuspensionUCPerformance" />
+          <ScalarProperty Name="BreaksUCPerformance" ColumnName="BreaksUCPerformance" />
+          <ScalarProperty Name="PaintOrPowercoatUCDetails" ColumnName="PaintOrPowercoatUCDetails" />
+          <ScalarProperty Name="CleanlinessUCDetails" ColumnName="CleanlinessUCDetails" />
+          <ScalarProperty Name="OneOfCustomizationsEngine" ColumnName="OneOfCustomizationsEngine" />
+          <ScalarProperty Name="UniquenessOfProductsEngine" ColumnName="UniquenessOfProductsEngine" />
+          <ScalarProperty Name="AccessoriesEngine" ColumnName="AccessoriesEngine" />
+          <ScalarProperty Name="ModificationsEngine" ColumnName="ModificationsEngine" />
+          <ScalarProperty Name="CleanlinessEngine" ColumnName="CleanlinessEngine" />
+          <ScalarProperty Name="PaintOriginalityExterior" ColumnName="PaintOriginalityExterior" />
+          <ScalarProperty Name="PaintCompletenessExterior" ColumnName="PaintCompletenessExterior" />
+          <ScalarProperty Name="PaintApperanceExterior" ColumnName="PaintApperanceExterior" />
+          <ScalarProperty Name="PaintCleanlinessExterior" ColumnName="PaintCleanlinessExterior" />
+          <ScalarProperty Name="OneOfCustomizationsExterior" ColumnName="OneOfCustomizationsExterior" />
+          <ScalarProperty Name="UniquenessOfProductExterior" ColumnName="UniquenessOfProductExterior" />
+          <ScalarProperty Name="FitNFinishExterior" ColumnName="FitNFinishExterior" />
+          <ScalarProperty Name="OverAllExterior" ColumnName="OverAllExterior" />
+          <ScalarProperty Name="CarId" ColumnName="CarId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
