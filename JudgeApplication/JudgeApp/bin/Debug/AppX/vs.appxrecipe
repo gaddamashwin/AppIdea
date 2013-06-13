@@ -5,7 +5,7 @@
     <WindowsUser>asgaddam</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>4C331D404617C5036E1DDC29A2C70EBDD23B0AF222169DF47CB34A4748D00A44</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>76054AF7DA1AB4640E13CC6B8881C25DC9D6B466182691E4DB136B36ABED52C3</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>8ff776ba-0914-4456-8eec-49d308951634_1.0.0.0_neutral__sqhgf5safn9a4</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>8ff776ba-0914-4456-8eec-49d308951634_sqhgf5safn9a4!App</RegisteredUserModeAppID>
     <RegisteredPackageID>8ff776ba-0914-4456-8eec-49d308951634</RegisteredPackageID>
@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-29T17:36:53.384</Modified>
+      <Modified>2013-06-13T18:22:04.707</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\JudgeApp.exe">
       <PackagePath>JudgeApp.exe</PackagePath>
-      <Modified>2013-05-29T19:44:16.939</Modified>
+      <Modified>2013-06-13T18:36:47.340</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\JudgeApp.pdb">
       <PackagePath>JudgeApp.pdb</PackagePath>
-      <Modified>2013-05-29T19:44:16.923</Modified>
+      <Modified>2013-06-13T18:36:47.322</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\SQLite.WinRT\3.7.16\Redist\Debug\x64\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
@@ -70,7 +70,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
-      <Modified>2013-04-18T18:08:15.208</Modified>
+      <Modified>2013-06-13T18:10:29.107</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\CarShowPage.xaml">
+      <PackagePath>CarShowPage.xaml</PackagePath>
+      <Modified>2013-06-13T18:33:23.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
@@ -78,7 +82,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\GroupedItemsPage.xaml">
       <PackagePath>GroupedItemsPage.xaml</PackagePath>
-      <Modified>2013-05-28T20:29:41.616</Modified>
+      <Modified>2013-06-13T18:36:44.695</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\GroupDetailPage.xaml">
       <PackagePath>GroupDetailPage.xaml</PackagePath>
@@ -86,11 +90,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\ItemDetailPage.xaml">
       <PackagePath>ItemDetailPage.xaml</PackagePath>
-      <Modified>2013-05-29T19:44:11.324</Modified>
+      <Modified>2013-06-13T16:31:25.685</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-05-29T17:36:52.594</Modified>
+      <Modified>2013-06-13T18:22:04.620</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

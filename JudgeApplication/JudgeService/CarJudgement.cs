@@ -14,7 +14,8 @@ namespace JudgeService
     
     public partial class CarJudgement
     {
-        public Nullable<int> CarId { get; set; }
+        public Nullable<int> CarShowId { get; set; }
+        public Nullable<int> CarModelId { get; set; }
         public Nullable<int> OverAllExterior { get; set; }
         public Nullable<int> FitNFinishExterior { get; set; }
         public Nullable<int> UniquenessOfProductExterior { get; set; }

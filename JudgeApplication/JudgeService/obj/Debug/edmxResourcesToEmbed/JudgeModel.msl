@@ -18,6 +18,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CarShows">
+      <EntityTypeMapping TypeName="JudgeModel.CarShow">
+        <MappingFragment StoreEntitySet="CarShow">
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="CarShowDescription" ColumnName="CarShowDescription" />
+          <ScalarProperty Name="CarShowName" ColumnName="CarShowName" />
+          <ScalarProperty Name="CarShowID" ColumnName="CarShowID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarShowCarModels">
+      <EntityTypeMapping TypeName="JudgeModel.CarShowCarModel">
+        <MappingFragment StoreEntitySet="CarShowCarModels">
+          <ScalarProperty Name="CarModelID" ColumnName="CarModelID" />
+          <ScalarProperty Name="CarShowID" ColumnName="CarShowID" />
+          <ScalarProperty Name="CarShowCarModelID" ColumnName="CarShowCarModelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CarJudgements">
       <EntityTypeMapping TypeName="JudgeModel.CarJudgement">
         <MappingFragment StoreEntitySet="CarJudgement">
@@ -56,7 +75,8 @@
           <ScalarProperty Name="UniquenessOfProductExterior" ColumnName="UniquenessOfProductExterior" />
           <ScalarProperty Name="FitNFinishExterior" ColumnName="FitNFinishExterior" />
           <ScalarProperty Name="OverAllExterior" ColumnName="OverAllExterior" />
-          <ScalarProperty Name="CarId" ColumnName="CarId" />
+          <ScalarProperty Name="CarModelId" ColumnName="CarModelId" />
+          <ScalarProperty Name="CarShowId" ColumnName="CarShowId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

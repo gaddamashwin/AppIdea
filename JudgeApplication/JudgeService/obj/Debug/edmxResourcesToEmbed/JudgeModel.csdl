@@ -3,6 +3,16 @@
   <EntityContainer Name="JudgeEntities" p1:LazyLoadingEnabled="true">
     <EntitySet Name="CarModels" EntityType="JudgeModel.CarModel" />
     <EntitySet Name="Cars" EntityType="JudgeModel.Car" />
+    <EntitySet Name="CarShows" EntityType="JudgeModel.CarShow" />
+    <EntitySet Name="CarShowCarModels" EntityType="JudgeModel.CarShowCarModel" />
+    <AssociationSet Name="FK_CarShowModelID" Association="JudgeModel.FK_CarShowModelID">
+      <End Role="CarModel" EntitySet="CarModels" />
+      <End Role="CarShowCarModel" EntitySet="CarShowCarModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarShowID" Association="JudgeModel.FK_CarShowID">
+      <End Role="CarShow" EntitySet="CarShows" />
+      <End Role="CarShowCarModel" EntitySet="CarShowCarModels" />
+    </AssociationSet>
     <EntitySet Name="CarJudgements" EntityType="JudgeModel.CarJudgement" />
   </EntityContainer>
   <EntityType Name="CarModel">
@@ -12,6 +22,7 @@
     <Property Name="CarModelID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="CarID" Type="Int32" Nullable="false" />
     <Property Name="CarModelName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="CarShowCarModels" Relationship="JudgeModel.FK_CarShowModelID" FromRole="CarModel" ToRole="CarShowCarModel" />
   </EntityType>
   <EntityType Name="Car">
     <Key>
@@ -20,11 +31,56 @@
     <Property Name="CarID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="CarName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
   </EntityType>
+  <EntityType Name="CarShow">
+    <Key>
+      <PropertyRef Name="CarShowID" />
+    </Key>
+    <Property Type="Int32" Name="CarShowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CarShowName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CarShowDescription" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsCompleted" />
+    <NavigationProperty Name="CarShowCarModels" Relationship="JudgeModel.FK_CarShowID" FromRole="CarShow" ToRole="CarShowCarModel" />
+  </EntityType>
+  <EntityType Name="CarShowCarModel">
+    <Key>
+      <PropertyRef Name="CarShowCarModelID" />
+    </Key>
+    <Property Type="Int32" Name="CarShowCarModelID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CarShowID" Nullable="false" />
+    <Property Type="Int32" Name="CarModelID" Nullable="false" />
+    <NavigationProperty Name="CarModel" Relationship="JudgeModel.FK_CarShowModelID" FromRole="CarShowCarModel" ToRole="CarModel" />
+    <NavigationProperty Name="CarShow" Relationship="JudgeModel.FK_CarShowID" FromRole="CarShowCarModel" ToRole="CarShow" />
+  </EntityType>
+  <Association Name="FK_CarShowModelID">
+    <End Type="JudgeModel.CarModel" Role="CarModel" Multiplicity="1" />
+    <End Type="JudgeModel.CarShowCarModel" Role="CarShowCarModel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarModel">
+        <PropertyRef Name="CarModelID" />
+      </Principal>
+      <Dependent Role="CarShowCarModel">
+        <PropertyRef Name="CarModelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarShowID">
+    <End Type="JudgeModel.CarShow" Role="CarShow" Multiplicity="1" />
+    <End Type="JudgeModel.CarShowCarModel" Role="CarShowCarModel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarShow">
+        <PropertyRef Name="CarShowID" />
+      </Principal>
+      <Dependent Role="CarShowCarModel">
+        <PropertyRef Name="CarShowID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityType Name="CarJudgement">
     <Key>
       <PropertyRef Name="CarJudgementID" />
     </Key>
-    <Property Type="Int32" Name="CarId" />
+    <Property Type="Int32" Name="CarShowId" />
+    <Property Type="Int32" Name="CarModelId" />
     <Property Type="Int32" Name="OverAllExterior" />
     <Property Type="Int32" Name="FitNFinishExterior" />
     <Property Type="Int32" Name="UniquenessOfProductExterior" />

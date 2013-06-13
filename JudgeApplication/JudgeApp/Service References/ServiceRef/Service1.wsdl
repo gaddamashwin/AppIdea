@@ -7,6 +7,12 @@
       <xsd:import schemaLocation="http://localhost:44815/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JudgeService" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_GetShows_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShows" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetShows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShowsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetCars_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCars" />
   </wsdl:message>
@@ -25,7 +31,17 @@
   <wsdl:message name="IService1_SaveJudgement_OutputMessage">
     <wsdl:part name="parameters" element="tns:SaveJudgementResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetJudgements_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJudgements" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetJudgements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJudgementsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="GetShows">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetShows" message="tns:IService1_GetShows_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetShowsResponse" message="tns:IService1_GetShows_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetCars">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCars" message="tns:IService1_GetCars_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCarsResponse" message="tns:IService1_GetCars_OutputMessage" />
@@ -38,9 +54,22 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SaveJudgement" message="tns:IService1_SaveJudgement_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/SaveJudgementResponse" message="tns:IService1_SaveJudgement_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetJudgements">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetJudgements" message="tns:IService1_GetJudgements_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetJudgementsResponse" message="tns:IService1_GetJudgements_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetShows">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetShows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetCars">
       <soap:operation soapAction="http://tempuri.org/IService1/GetCars" style="document" />
       <wsdl:input>
@@ -61,6 +90,15 @@
     </wsdl:operation>
     <wsdl:operation name="SaveJudgement">
       <soap:operation soapAction="http://tempuri.org/IService1/SaveJudgement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJudgements">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetJudgements" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

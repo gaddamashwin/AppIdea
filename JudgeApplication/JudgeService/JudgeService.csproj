@@ -78,6 +78,12 @@
     <Compile Include="CarModel.cs">
       <DependentUpon>JudgeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CarShow.cs">
+      <DependentUpon>JudgeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarShowCarModel.cs">
+      <DependentUpon>JudgeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="JudgeModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

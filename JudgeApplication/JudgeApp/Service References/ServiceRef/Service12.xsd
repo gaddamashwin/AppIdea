@@ -1,40 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:44815/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JudgeService" />
-  <xs:element name="GetCars">
+  <xs:element name="GetShows">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShowsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/JudgeService" minOccurs="0" name="GetShowsResult" nillable="true" type="q1:ArrayOfCarShowType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCars">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="carShowID" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetCarsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/JudgeService" minOccurs="0" name="GetCarsResult" nillable="true" type="q1:ArrayOfCarType" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/JudgeService" minOccurs="0" name="GetCarsResult" nillable="true" type="q2:ArrayOfCarType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetCarModels">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="carShowID" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetCarModelsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/JudgeService" minOccurs="0" name="GetCarModelsResult" nillable="true" type="q2:ArrayOfCarModelType" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/JudgeService" minOccurs="0" name="GetCarModelsResult" nillable="true" type="q3:ArrayOfCarModelType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SaveJudgement">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/JudgeService" minOccurs="0" name="carJudgement" nillable="true" type="q3:CarJudgementType" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/JudgeService" minOccurs="0" name="carJudgement" nillable="true" type="q4:CarJudgementType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SaveJudgementResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJudgements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJudgementsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/JudgeService" minOccurs="0" name="GetJudgementsResult" nillable="true" type="q5:ArrayOfCarJudgementType" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

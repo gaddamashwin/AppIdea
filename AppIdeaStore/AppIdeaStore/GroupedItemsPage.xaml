@@ -232,4 +232,5 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
     </Grid>
+    
 </common:LayoutAwarePage>

@@ -12,16 +12,17 @@ namespace JudgeService
     using System;
     using System.Collections.Generic;
     
-    public partial class CarModel
+    public partial class CarShow
     {
-        public CarModel()
+        public CarShow()
         {
             this.CarShowCarModels = new HashSet<CarShowCarModel>();
         }
     
-        public int CarModelID { get; set; }
-        public int CarID { get; set; }
-        public string CarModelName { get; set; }
+        public int CarShowID { get; set; }
+        public string CarShowName { get; set; }
+        public string CarShowDescription { get; set; }
+        public Nullable<bool> IsCompleted { get; set; }
     
         public virtual ICollection<CarShowCarModel> CarShowCarModels { get; set; }
     }

@@ -13,16 +13,37 @@ namespace JudgeService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public IEnumerable<CarType> GetCars()
+        public IEnumerable<CarShowType> GetShows()
         {
             JudgeEntities ent = new JudgeEntities();
-            return ent.Cars.ToList<Car>().ConvertAll<CarType>(i => CopyProperties<CarType>(i));
+            return ent.CarShows.Where(show => show.IsCompleted == false).ToList<CarShow>().ConvertAll<CarShowType>(i => CopyProperties<CarShowType>(i));
         }
 
-        public IEnumerable<CarModelType> GetCarModels()
+        public IEnumerable<CarType> GetCars(int carShowID)
         {
             JudgeEntities ent = new JudgeEntities();
-            return ent.CarModels.ToList<CarModel>().ConvertAll<CarModelType>(i => CopyProperties<CarModelType>(i));
+            //return ent.Cars.ToList<Car>().ConvertAll<CarType>(i => CopyProperties<CarType>(i));
+            return (from carShow in ent.CarShowCarModels
+                         join carModel in ent.CarModels on carShow.CarModelID equals carModel.CarModelID
+                         join car in ent.Cars on carModel.CarID equals car.CarID
+                         where carShow.CarShowID == carShowID
+                    select car).Distinct<Car>().ToList<Car>().ConvertAll<CarType>(i => CopyProperties<CarType>(i)); 
+        }
+
+        public IEnumerable<CarModelType> GetCarModels(int carShowID)
+        {
+            JudgeEntities ent = new JudgeEntities();
+            //return ent.CarModels.ToList<CarModel>().ConvertAll<CarModelType>(i => CopyProperties<CarModelType>(i));
+            return (from carShow in ent.CarShowCarModels
+                    join carModel in ent.CarModels on carShow.CarModelID equals carModel.CarModelID
+                    where carShow.CarShowID == carShowID
+                    select carModel).Distinct<CarModel>().ToList<CarModel>().ConvertAll<CarModelType>(i => CopyProperties<CarModelType>(i)); 
+        }
+
+        public IEnumerable<CarJudgementType> GetJudgements(string userName)
+        {
+            JudgeEntities ent = new JudgeEntities();
+            return ent.CarJudgements.Where(j => j.JudgedByJudgedDetails == userName).ToList<CarJudgement>().ConvertAll<CarJudgementType>(i => CopyProperties<CarJudgementType>(i));
         }
 
         private static T CopyProperties<T>(object src) where T : new()
@@ -56,6 +77,7 @@ namespace JudgeService
         {
             JudgeEntities ent = new JudgeEntities();
             var result= CopyProperties<CarJudgement>(carJudgement);
+            ent.CarJudgements.Remove(ent.CarJudgements.Where(jud => jud.CarModelId == carJudgement.CarModelId && jud.CarShowId == carJudgement.CarShowId).FirstOrDefault());
             ent.CarJudgements.Add(result);
             ent.SaveChanges();
         }

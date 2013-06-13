@@ -17,6 +17,66 @@ namespace JudgeApp.ServiceRef {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CarShowType", Namespace="http://schemas.datacontract.org/2004/07/JudgeService")]
+    public partial class CarShowType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string CarShowDescriptionField;
+        
+        private int CarShowIDField;
+        
+        private string CarShowNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CarShowDescription {
+            get {
+                return this.CarShowDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CarShowDescriptionField, value) != true)) {
+                    this.CarShowDescriptionField = value;
+                    this.RaisePropertyChanged("CarShowDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CarShowID {
+            get {
+                return this.CarShowIDField;
+            }
+            set {
+                if ((this.CarShowIDField.Equals(value) != true)) {
+                    this.CarShowIDField = value;
+                    this.RaisePropertyChanged("CarShowID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CarShowName {
+            get {
+                return this.CarShowNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CarShowNameField, value) != true)) {
+                    this.CarShowNameField = value;
+                    this.RaisePropertyChanged("CarShowName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CarType", Namespace="http://schemas.datacontract.org/2004/07/JudgeService")]
     public partial class CarType : object, System.ComponentModel.INotifyPropertyChanged {
         
@@ -133,9 +193,11 @@ namespace JudgeApp.ServiceRef {
         
         private int BreaksUCPerformanceField;
         
-        private int CarIdField;
-        
         private int CarJudgementIDField;
+        
+        private int CarModelIdField;
+        
+        private int CarShowIdField;
         
         private int CleanlinessEngineField;
         
@@ -250,19 +312,6 @@ namespace JudgeApp.ServiceRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CarId {
-            get {
-                return this.CarIdField;
-            }
-            set {
-                if ((this.CarIdField.Equals(value) != true)) {
-                    this.CarIdField = value;
-                    this.RaisePropertyChanged("CarId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int CarJudgementID {
             get {
                 return this.CarJudgementIDField;
@@ -271,6 +320,32 @@ namespace JudgeApp.ServiceRef {
                 if ((this.CarJudgementIDField.Equals(value) != true)) {
                     this.CarJudgementIDField = value;
                     this.RaisePropertyChanged("CarJudgementID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CarModelId {
+            get {
+                return this.CarModelIdField;
+            }
+            set {
+                if ((this.CarModelIdField.Equals(value) != true)) {
+                    this.CarModelIdField = value;
+                    this.RaisePropertyChanged("CarModelId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CarShowId {
+            get {
+                return this.CarShowIdField;
+            }
+            set {
+                if ((this.CarShowIdField.Equals(value) != true)) {
+                    this.CarShowIdField = value;
+                    this.RaisePropertyChanged("CarShowId");
                 }
             }
         }
@@ -679,14 +754,20 @@ namespace JudgeApp.ServiceRef {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceRef.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetShows", ReplyAction="http://tempuri.org/IService1/GetShowsResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarShowType>> GetShowsAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCars", ReplyAction="http://tempuri.org/IService1/GetCarsResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarType>> GetCarsAsync();
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarType>> GetCarsAsync(int carShowID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCarModels", ReplyAction="http://tempuri.org/IService1/GetCarModelsResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarModelType>> GetCarModelsAsync();
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarModelType>> GetCarModelsAsync(int carShowID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SaveJudgement", ReplyAction="http://tempuri.org/IService1/SaveJudgementResponse")]
         System.Threading.Tasks.Task SaveJudgementAsync(JudgeApp.ServiceRef.CarJudgementType carJudgement);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetJudgements", ReplyAction="http://tempuri.org/IService1/GetJudgementsResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarJudgementType>> GetJudgementsAsync(string userName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -732,16 +813,24 @@ namespace JudgeApp.ServiceRef {
                 base(binding, remoteAddress) {
         }
         
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarType>> GetCarsAsync() {
-            return base.Channel.GetCarsAsync();
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarShowType>> GetShowsAsync() {
+            return base.Channel.GetShowsAsync();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarModelType>> GetCarModelsAsync() {
-            return base.Channel.GetCarModelsAsync();
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarType>> GetCarsAsync(int carShowID) {
+            return base.Channel.GetCarsAsync(carShowID);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarModelType>> GetCarModelsAsync(int carShowID) {
+            return base.Channel.GetCarModelsAsync(carShowID);
         }
         
         public System.Threading.Tasks.Task SaveJudgementAsync(JudgeApp.ServiceRef.CarJudgementType carJudgement) {
             return base.Channel.SaveJudgementAsync(carJudgement);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<JudgeApp.ServiceRef.CarJudgementType>> GetJudgementsAsync(string userName) {
+            return base.Channel.GetJudgementsAsync(userName);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync() {

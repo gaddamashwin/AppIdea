@@ -17,6 +17,15 @@ namespace JudgeApp.DataModel
 
     public class Helper
     {
+        private static string loginUserName;
+        public static async Task<string> LoginUserName()
+        { 
+            if (string.IsNullOrEmpty(loginUserName))
+            {
+                loginUserName = await Windows.System.UserProfile.UserInformation.GetDisplayNameAsync();
+            }
+            return loginUserName;
+        }
         //public static BitmapImage ByteArrayToImage(byte[] pict)
         //{
         //    if (pict != null)
@@ -40,29 +49,33 @@ namespace JudgeApp.DataModel
         public static T CopyProperties<T>(object src) where T : new()
         {
             var dst = new T();
-            IEnumerable<PropertyInfo> srcProperties = src.GetType().GetRuntimeProperties();
-            dynamic dstType = dst.GetType();
-
-            if (srcProperties == null | dstType.GetProperties() == null)
+            if (src != null)
             {
-                return dst;
-            }
+                IEnumerable<PropertyInfo> srcProperties = src.GetType().GetRuntimeProperties();
+                dynamic dstType = dst.GetType();
 
-            foreach (PropertyInfo srcProperty in srcProperties)
-            {
-                PropertyInfo dstProperty = dstType.GetProperty(srcProperty.Name);
-
-                if (dstProperty != null)
+                if (srcProperties == null | dstType.GetProperties() == null)
                 {
-                    if (dstProperty.CanWrite == true)
+                    return dst;
+                }
+
+                foreach (PropertyInfo srcProperty in srcProperties)
+                {
+                    PropertyInfo dstProperty = dstType.GetProperty(srcProperty.Name);
+
+                    if (dstProperty != null)
                     {
-                        dstProperty.SetValue(dst, srcProperty.GetValue(src, null), null);
+                        if (dstProperty.CanWrite == true)
+                        {
+                            dstProperty.SetValue(dst, srcProperty.GetValue(src, null), null);
+                        }
                     }
                 }
             }
             return dst;
         }
         private static ServiceRef.Service1Client svc;
+        public static int CarShowId;
         public static ServiceRef.Service1Client appService
         {
             get
@@ -73,7 +86,7 @@ namespace JudgeApp.DataModel
         /// <summary>
         /// 
         /// </summary>
-        public static string SQLitePath = Windows.Storage.ApplicationData.Current.LocalFolder.Path + @"\ApJudge1.db";
+        public static string SQLitePath = Windows.Storage.ApplicationData.Current.LocalFolder.Path + @"\ApJudge5.db";
         /// <summary>
         /// 
         /// </summary>
@@ -91,15 +104,13 @@ namespace JudgeApp.DataModel
             var _db = new SQLiteAsyncConnection(Helper.SQLitePath);
             //await DeleteTables();
             var data = await _db.QueryAsync<sqlite_master>("SELECT name FROM sqlite_master WHERE type='table';");
-            if (data.Count <= 1)
+            if (data.Count <= 2)
             {
-                
-                await _db.CreateTablesAsync(new Type[] { typeof(Car), typeof(CarModel)});
+                await _db.CreateTablesAsync(new Type[] { typeof(Car), typeof(CarModel), typeof(CarShow) });
                 await SyncTables();
             }
-
-           
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -110,6 +121,7 @@ namespace JudgeApp.DataModel
             var r1 = await db.DropTableAsync<Car>();
             var r2 = await db.DropTableAsync<CarModel>();
         }
+      
         /// <summary>
         /// 
         /// </summary>
@@ -119,20 +131,20 @@ namespace JudgeApp.DataModel
             await DeleteTables();
             //DataCollection.clearCollection();
         }
-
+        
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
         public static async Task SyncTables()
         {
-            var db = new SQLiteAsyncConnection(Helper.SQLitePath);
+            //var db = new SQLiteAsyncConnection(Helper.SQLitePath);
 
-            var r = await Helper.appService.GetCarsAsync();
-            await db.InsertAllAsync(r.Select(i => Helper.CopyProperties<Car>(i)));
+            //var r = await Helper.appService.GetCarsAsync(Helper.CarShowId);
+            //await db.InsertAllAsync(r.Select(i => Helper.CopyProperties<Car>(i)));
 
-            var r2 = await Helper.appService.GetCarModelsAsync();
-            await db.InsertAllAsync(r2.Select(i => Helper.CopyProperties<CarModel>(i)));
+            //var r2 = await Helper.appService.GetCarModelsAsync(Helper.CarShowId);
+            //await db.InsertAllAsync(r2.Select(i => Helper.CopyProperties<CarModel>(i)));
         }
     }
 
@@ -140,6 +152,7 @@ namespace JudgeApp.DataModel
     {
         private static IEnumerable<Car> cars;
         private static IEnumerable<CarModel> carmodels;
+        private static IEnumerable<CarShow> carShows;
         private static List<CarCarModels> carModelCars;
         /// <summary>
         /// All the cars
@@ -153,7 +166,7 @@ namespace JudgeApp.DataModel
                 cars = await db.QueryAsync<Car>("select * from Car");
                 if (!cars.Any())
                 {
-                    var tmpcars = await Helper.appService.GetCarsAsync();
+                    var tmpcars = await Helper.appService.GetCarsAsync(Helper.CarShowId);
                     cars = tmpcars.Select(i => Helper.CopyProperties<Car>(i));
                     await db.InsertAllAsync(cars);
                 }
@@ -172,12 +185,32 @@ namespace JudgeApp.DataModel
                 carmodels = await db.QueryAsync<CarModel>("SELECT * FROM CarModel");
                 if (!carmodels.Any())
                 {
-                    var tmpcarmodels = await Helper.appService.GetCarModelsAsync();
+                    var tmpcarmodels = await Helper.appService.GetCarModelsAsync(Helper.CarShowId);
                     carmodels = tmpcarmodels.Select(i => Helper.CopyProperties<CarModel>(i));
                     await db.InsertAllAsync(carmodels);
                 }
             }
             return carmodels;
+        }
+
+        /// <summary>
+        /// All CarShows
+        /// </summary>
+        /// <returns></returns>
+        private static async Task<IEnumerable<CarShow>> CarShows()
+        {
+            if (carShows == null)
+            {
+                var db = new SQLiteAsyncConnection(Helper.SQLitePath);
+                carShows = await db.QueryAsync<CarShow>("SELECT * FROM CarShow");
+                if (!carShows.Any())
+                {
+                    var tmpcarmodels = await Helper.appService.GetShowsAsync();
+                    carShows = tmpcarmodels.Select(i => Helper.CopyProperties<CarShow>(i));
+                    await db.InsertAllAsync(carShows);
+                }
+            }
+            return carShows;
         }
 
         /// <summary>
@@ -205,6 +238,17 @@ namespace JudgeApp.DataModel
                 }
             }
             return carModelCars;
+        }
+
+        /// <summary>
+        /// Data Source for Group Detail
+        /// </summary>
+        /// <param name="sectorID">ID of the Group</param>
+        /// <returns>All the App Data for the group</returns>
+        public static async Task<IEnumerable<CarShow>> GetCarShows()
+        {
+            if (carShows == null) await CarShows();
+            return carShows;
         }
 
         /// <summary>

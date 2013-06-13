@@ -114,11 +114,13 @@ namespace JudgeApp.JudgeApp_XamlTypeInfo
 
         private object Activate_0_LayoutAwarePage() { return new global::JudgeApp.Common.LayoutAwarePage(); }
 
-        private object Activate_1_GroupedItemsPage() { return new global::JudgeApp.GroupedItemsPage(); }
+        private object Activate_1_CarShowPage() { return new global::JudgeApp.CarShowPage(); }
 
-        private object Activate_2_GroupDetailPage() { return new global::JudgeApp.GroupDetailPage(); }
+        private object Activate_2_GroupedItemsPage() { return new global::JudgeApp.GroupedItemsPage(); }
 
-        private object Activate_3_ItemDetailPage() { return new global::JudgeApp.ItemDetailPage(); }
+        private object Activate_3_GroupDetailPage() { return new global::JudgeApp.GroupDetailPage(); }
+
+        private object Activate_4_ItemDetailPage() { return new global::JudgeApp.ItemDetailPage(); }
 
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(string typeName)
@@ -142,21 +144,27 @@ namespace JudgeApp.JudgeApp_XamlTypeInfo
                 xamlType = userType;
                 break;
 
+            case "JudgeApp.CarShowPage":
+                userType = new global::JudgeApp.JudgeApp_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::JudgeApp.CarShowPage), GetXamlTypeByName("JudgeApp.Common.LayoutAwarePage"));
+                userType.Activator = Activate_1_CarShowPage;
+                xamlType = userType;
+                break;
+
             case "JudgeApp.GroupedItemsPage":
                 userType = new global::JudgeApp.JudgeApp_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::JudgeApp.GroupedItemsPage), GetXamlTypeByName("JudgeApp.Common.LayoutAwarePage"));
-                userType.Activator = Activate_1_GroupedItemsPage;
+                userType.Activator = Activate_2_GroupedItemsPage;
                 xamlType = userType;
                 break;
 
             case "JudgeApp.GroupDetailPage":
                 userType = new global::JudgeApp.JudgeApp_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::JudgeApp.GroupDetailPage), GetXamlTypeByName("JudgeApp.Common.LayoutAwarePage"));
-                userType.Activator = Activate_2_GroupDetailPage;
+                userType.Activator = Activate_3_GroupDetailPage;
                 xamlType = userType;
                 break;
 
             case "JudgeApp.ItemDetailPage":
                 userType = new global::JudgeApp.JudgeApp_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::JudgeApp.ItemDetailPage), GetXamlTypeByName("JudgeApp.Common.LayoutAwarePage"));
-                userType.Activator = Activate_3_ItemDetailPage;
+                userType.Activator = Activate_4_ItemDetailPage;
                 xamlType = userType;
                 break;
 

@@ -28,3 +28,6 @@ C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\r
 C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\pri.resfiles
 C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\LanguageQualifiers.txt
 C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\ProjectArchitectures.txt
+C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\CarShowPage.g.i.cs
+C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\CarShowPage.g.cs
+C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\CarShowPage.xaml

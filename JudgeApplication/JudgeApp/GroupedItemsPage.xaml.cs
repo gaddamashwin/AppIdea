@@ -39,8 +39,6 @@ namespace JudgeApp
         protected override async void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            await DataModel.Helper.InitObjects();
-            //var sampleDataGroups = await AppIdeaDataSource.GetCarModel((int)navigationParameter);
             var sampleDataGroups = await AppIdeaDataSource.GetCarModelsandCars();
             this.DefaultViewModel["Groups"] = sampleDataGroups;
         }

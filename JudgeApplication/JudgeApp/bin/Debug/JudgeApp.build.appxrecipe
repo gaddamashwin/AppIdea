@@ -53,6 +53,9 @@
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\CarShowPage.xaml">
+      <PackagePath>CarShowPage.xaml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
     </AppxPackagedFile>

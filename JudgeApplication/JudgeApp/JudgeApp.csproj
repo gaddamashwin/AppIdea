@@ -112,6 +112,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CarShowPage.xaml.cs">
+      <DependentUpon>CarShowPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataModel\DataContracts.cs" />
     <Compile Include="DataModel\Helper.cs" />
     <Compile Include="GroupedItemsPage.xaml.cs">
@@ -146,7 +149,13 @@
     <None Include="JudgeApp_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
+    <None Include="Service References\ServiceRef\JudgeApp.ServiceRef.CarJudgementType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceRef\JudgeApp.ServiceRef.CarModelType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceRef\JudgeApp.ServiceRef.CarShowType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceRef\JudgeApp.ServiceRef.CarType.datasource">
@@ -184,6 +193,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="CarShowPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Common\StandardStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

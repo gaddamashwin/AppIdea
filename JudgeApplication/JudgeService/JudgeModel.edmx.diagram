@@ -4,10 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="962c1d9813ee4712838302efc84815d6" Name="Diagram1">
+      <Diagram DiagramId="962c1d9813ee4712838302efc84815d6" Name="Diagram1" ZoomLevel="82">
         <EntityTypeShape EntityType="JudgeModel.CarModel" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="JudgeModel.Car" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JudgeModel.CarJudgement" Width="3" PointX="4.625" PointY="0.75" />
+        <EntityTypeShape EntityType="JudgeModel.CarShow" Width="1.5" PointX="7.5" PointY="0.875" />
+        <EntityTypeShape EntityType="JudgeModel.CarShowCarModel" Width="1.5" PointX="2.625" PointY="7.25" />
+        <AssociationConnector Association="JudgeModel.FK_CarShowModelID" />
+        <AssociationConnector Association="JudgeModel.FK_CarShowID" />
+        <EntityTypeShape EntityType="JudgeModel.CarJudgement" Width="1.5" PointX="4.875" PointY="0.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

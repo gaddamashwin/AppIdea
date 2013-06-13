@@ -6,6 +6,7 @@ Assets\SmallLogo.png
 Assets\SplashScreen.png
 Assets\StoreLogo.png
 App.xaml
+CarShowPage.xaml
 Common\StandardStyles.xaml
 GroupDetailPage.xaml
 GroupedItemsPage.xaml

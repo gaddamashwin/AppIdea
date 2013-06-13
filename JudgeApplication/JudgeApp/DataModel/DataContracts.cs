@@ -18,15 +18,7 @@ namespace JudgeApp.DataModel
 
         public string CarNameWithModel { get; set; }
 
-        private CarJudgement _carJudgement = new CarJudgement();
-
-        public CarJudgement carJudgement 
-        { 
-            get
-            { return _carJudgement; } 
-            set
-            { _carJudgement = value; } 
-        }
+        //public CarJudgement carJudgement { get; set; }
     }
 
     [Table("Car")]
@@ -36,10 +28,17 @@ namespace JudgeApp.DataModel
          public new int CarID { get { return base.CarID; } set { base.CarID = value; } }
     }
 
-    [Table("CarJudgement")]
-    public class CarJudgement : ServiceRef.CarJudgementType
+    [Table("CarShow")]
+    public class CarShow : ServiceRef.CarShowType
     {
         [PrimaryKey]
+        public new int CarShowID { get { return base.CarShowID; } set { base.CarShowID = value; } }
+    }
+
+    //[Table("CarJudgement")]
+    public class CarJudgement : ServiceRef.CarJudgementType
+    {
+        //[PrimaryKey]
         public int CarJudgementTypeID { get;set; }
     }
 
@@ -125,5 +124,8 @@ namespace JudgeApp.DataModel
 
             }
         }
+
+        public CarJudgement carJudgement { get; set; }
     }
+
 }

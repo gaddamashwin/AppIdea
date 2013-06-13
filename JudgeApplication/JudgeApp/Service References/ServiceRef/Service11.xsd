@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/JudgeService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JudgeService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCarShowType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarShowType" nillable="true" type="tns:CarShowType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarShowType" nillable="true" type="tns:ArrayOfCarShowType" />
+  <xs:complexType name="CarShowType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarShowDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarShowID" type="xs:int" />
+      <xs:element minOccurs="0" name="CarShowName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarShowType" nillable="true" type="tns:CarShowType" />
   <xs:complexType name="ArrayOfCarType">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="CarType" nillable="true" type="tns:CarType" />
@@ -33,8 +47,9 @@
       <xs:element minOccurs="0" name="AccessoriesInterior" type="xs:int" />
       <xs:element minOccurs="0" name="AppearanceWheels" type="xs:int" />
       <xs:element minOccurs="0" name="BreaksUCPerformance" type="xs:int" />
-      <xs:element minOccurs="0" name="CarId" type="xs:int" />
       <xs:element minOccurs="0" name="CarJudgementID" type="xs:int" />
+      <xs:element minOccurs="0" name="CarModelId" type="xs:int" />
+      <xs:element minOccurs="0" name="CarShowId" type="xs:int" />
       <xs:element minOccurs="0" name="CleanlinessEngine" type="xs:int" />
       <xs:element minOccurs="0" name="CleanlinessInterior" type="xs:int" />
       <xs:element minOccurs="0" name="CleanlinessUCDetails" type="xs:int" />
@@ -68,4 +83,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CarJudgementType" nillable="true" type="tns:CarJudgementType" />
+  <xs:complexType name="ArrayOfCarJudgementType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarJudgementType" nillable="true" type="tns:CarJudgementType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarJudgementType" nillable="true" type="tns:ArrayOfCarJudgementType" />
 </xs:schema>

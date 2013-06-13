@@ -18,7 +18,7 @@
 
             <!-- Application-specific resources -->
 
-            <x:String x:Key="AppName">JudgeApp</x:String>
+            <x:String x:Key="AppName">Car Judge App</x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

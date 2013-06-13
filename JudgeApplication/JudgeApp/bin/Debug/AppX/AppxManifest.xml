@@ -22,7 +22,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="JudgeApp.exe" EntryPoint="JudgeApp.App">
-      <VisualElements DisplayName="JudgeApp" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="JudgeApp" ForegroundText="light" BackgroundColor="#464646">
+      <VisualElements DisplayName="Car Judge App" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="JudgeApp" ForegroundText="light" BackgroundColor="#464646">
         <DefaultTile ShowName="allLogos" />
         <SplashScreen Image="Assets\SplashScreen.png" />
       </VisualElements>

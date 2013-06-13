@@ -13,13 +13,32 @@ namespace JudgeService
     public interface IService1
     {
         [OperationContract]
-        IEnumerable<CarType> GetCars();
+        IEnumerable<CarShowType> GetShows();
 
         [OperationContract]
-        IEnumerable<CarModelType> GetCarModels();
+        IEnumerable<CarType> GetCars(int carShowID);
+
+        [OperationContract]
+        IEnumerable<CarModelType> GetCarModels(int carShowID);
 
         [OperationContract]
         void SaveJudgement(CarJudgementType carJudgement);
+
+        [OperationContract]
+        IEnumerable<CarJudgementType> GetJudgements(string userName);
+    }
+
+    [DataContract]
+    public class CarShowType
+    {
+        [DataMember]
+        public int CarShowID { get; set; }
+        [DataMember]
+        public string CarShowName { get; set; }
+        [DataMember]
+        public string CarShowDescription { get; set; }
+        //[DataMember]
+        //public bool IsCompleted { get; set; }
     }
 
     [DataContract]
@@ -46,7 +65,9 @@ namespace JudgeService
     public class CarJudgementType
     {
         [DataMember]
-        public int CarId { get; set; }
+        public int CarShowId { get; set; }
+        [DataMember]
+        public int CarModelId { get; set; }
         [DataMember]
         public int OverAllExterior { get; set; }
         [DataMember]

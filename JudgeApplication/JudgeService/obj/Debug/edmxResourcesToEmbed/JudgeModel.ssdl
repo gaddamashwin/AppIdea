@@ -4,12 +4,23 @@
     <EntitySet Name="CarJudgement" EntityType="JudgeModel.Store.CarJudgement" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CarModel" EntityType="JudgeModel.Store.CarModel" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Cars" EntityType="JudgeModel.Store.Cars" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarShow" EntityType="JudgeModel.Store.CarShow" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarShowCarModels" EntityType="JudgeModel.Store.CarShowCarModels" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_CarShowID" Association="JudgeModel.Store.FK_CarShowID">
+      <End Role="CarShow" EntitySet="CarShow" />
+      <End Role="CarShowCarModels" EntitySet="CarShowCarModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarShowModelID" Association="JudgeModel.Store.FK_CarShowModelID">
+      <End Role="CarModel" EntitySet="CarModel" />
+      <End Role="CarShowCarModels" EntitySet="CarShowCarModels" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="CarJudgement">
     <Key>
       <PropertyRef Name="CarJudgementID" />
     </Key>
-    <Property Name="CarId" Type="int" />
+    <Property Name="CarShowId" Type="int" />
+    <Property Name="CarModelId" Type="int" />
     <Property Name="OverAllExterior" Type="int" />
     <Property Name="FitNFinishExterior" Type="int" />
     <Property Name="UniquenessOfProductExterior" Type="int" />
@@ -61,4 +72,45 @@
     <Property Name="CarID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="CarName" Type="varchar" Nullable="false" MaxLength="100" />
   </EntityType>
+  <EntityType Name="CarShow">
+    <Key>
+      <PropertyRef Name="CarShowID" />
+    </Key>
+    <Property Name="CarShowID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CarShowName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CarShowDescription" Type="varchar" MaxLength="200" />
+    <Property Name="IsCompleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="CarShowCarModels">
+    <Key>
+      <PropertyRef Name="CarShowCarModelID" />
+    </Key>
+    <Property Name="CarShowCarModelID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CarShowID" Type="int" Nullable="false" />
+    <Property Name="CarModelID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CarShowID">
+    <End Role="CarShow" Type="JudgeModel.Store.CarShow" Multiplicity="1" />
+    <End Role="CarShowCarModels" Type="JudgeModel.Store.CarShowCarModels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarShow">
+        <PropertyRef Name="CarShowID" />
+      </Principal>
+      <Dependent Role="CarShowCarModels">
+        <PropertyRef Name="CarShowID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarShowModelID">
+    <End Role="CarModel" Type="JudgeModel.Store.CarModel" Multiplicity="1" />
+    <End Role="CarShowCarModels" Type="JudgeModel.Store.CarShowCarModels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarModel">
+        <PropertyRef Name="CarModelID" />
+      </Principal>
+      <Dependent Role="CarShowCarModels">
+        <PropertyRef Name="CarModelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
