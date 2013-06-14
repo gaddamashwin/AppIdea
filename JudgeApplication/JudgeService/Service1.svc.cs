@@ -77,7 +77,8 @@ namespace JudgeService
         {
             JudgeEntities ent = new JudgeEntities();
             var result= CopyProperties<CarJudgement>(carJudgement);
-            ent.CarJudgements.Remove(ent.CarJudgements.Where(jud => jud.CarModelId == carJudgement.CarModelId && jud.CarShowId == carJudgement.CarShowId).FirstOrDefault());
+            var existingCar = ent.CarJudgements.Where(jud => jud.CarModelId == carJudgement.CarModelId && jud.CarShowId == carJudgement.CarShowId).FirstOrDefault();
+            if (existingCar != null) ent.CarJudgements.Remove(existingCar);
             ent.CarJudgements.Add(result);
             ent.SaveChanges();
         }

@@ -41,7 +41,7 @@ namespace JudgeApp
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var group = AppIdeaDataSource.GetCar((int)navigationParameter);
+            var group = JudgeDataSource.GetCar((int)navigationParameter);
             this.DefaultViewModel["Group"] = group;
             this.DefaultViewModel["Items"] = group.AppItems;
         }

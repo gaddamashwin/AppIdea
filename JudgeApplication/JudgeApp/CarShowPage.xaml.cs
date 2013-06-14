@@ -40,14 +40,30 @@ namespace JudgeApp
         protected override async void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             // TODO: Assign a bindable collection of items to this.DefaultViewModel["Items"]
-            var sampleDataGroups = await AppIdeaDataSource.GetCarShows();
+            var sampleDataGroups = await JudgeDataSource.GetCarShows();
             this.DefaultViewModel["Items"] = sampleDataGroups;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void itemGridView_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             Helper.CarShowId = ((CarShow)e.ClickedItem).CarShowID;
             this.Frame.Navigate(typeof(GroupedItemsPage));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void backSync_Click_1(object sender, RoutedEventArgs e)
+        {
+            await Helper.ClearData();
+            LoadState(null, null);
         }
     }
 }

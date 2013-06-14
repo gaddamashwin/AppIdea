@@ -49,17 +49,9 @@ namespace JudgeApp
             }
 
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var item = await AppIdeaDataSource.GetCarModel((int)navigationParameter);
-            var judge = await Helper.appService.GetJudgementsAsync(await Helper.LoginUserName());
-            //item.carJudgement = Helper.CopyProperties<CarJudgement>(judge.FirstOrDefault());
-            //item.carJudgement.CarId = item.CarModelID;
+            var item = await JudgeDataSource.GetCarModel((int)navigationParameter);
             this.DefaultViewModel["Group"] = item;
-            //this.DefaultViewModel["Items"] = Helper.CopyProperties<CarJudgement>(judge.FirstOrDefault());
-            var judgement = Helper.CopyProperties<CarJudgement>(judge.Where(i => (i.CarModelId == item.CarModelID) && (i.CarShowId == Helper.CarShowId)).FirstOrDefault());
-            judgement.CarModelId = item.CarModelID;
-            judgement.CarShowId = Helper.CarShowId;
-            this.DefaultViewModel["Items"] = judgement;
-            //this.flipView.SelectedItem = item;
+            this.DefaultViewModel["Items"] = await JudgeDataSource.GetCarJudgement(item.CarModelID);
         }
 
         /// <summary>
@@ -76,10 +68,7 @@ namespace JudgeApp
 
         private async void btnSave_Click_1(object sender, RoutedEventArgs e)
         {
-            CarJudgementType judgementResults = Helper.CopyProperties<CarJudgementType>(judgementItems.DataContext);
-            judgementResults.JudgedDateJudgedDetails = DateTime.Now;
-            judgementResults.JudgedByJudgedDetails = await Helper.LoginUserName();
-           await Helper.appService.SaveJudgementAsync(judgementResults);
+            await JudgeDataSource.SaveCarJudgement(judgementItems.DataContext);
         }
     }
 }

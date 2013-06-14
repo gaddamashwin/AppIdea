@@ -117,6 +117,7 @@
     </Compile>
     <Compile Include="DataModel\DataContracts.cs" />
     <Compile Include="DataModel\Helper.cs" />
+    <Compile Include="DataModel\JudgeDataSource.cs" />
     <Compile Include="GroupedItemsPage.xaml.cs">
       <DependentUpon>GroupedItemsPage.xaml</DependentUpon>
     </Compile>

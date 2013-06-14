@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-06-13T18:22:04.707</Modified>
+      <Modified>2013-06-14T13:20:47.634</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\JudgeApp.exe">
       <PackagePath>JudgeApp.exe</PackagePath>
-      <Modified>2013-06-13T18:36:47.340</Modified>
+      <Modified>2013-06-14T13:20:47.159</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\JudgeApp.pdb">
       <PackagePath>JudgeApp.pdb</PackagePath>
-      <Modified>2013-06-13T18:36:47.322</Modified>
+      <Modified>2013-06-14T13:20:47.141</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\SQLite.WinRT\3.7.16\Redist\Debug\x64\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
@@ -74,11 +74,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\CarShowPage.xaml">
       <PackagePath>CarShowPage.xaml</PackagePath>
-      <Modified>2013-06-13T18:33:23.211</Modified>
+      <Modified>2013-06-13T18:59:49.605</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
-      <Modified>2013-05-29T19:44:15.324</Modified>
+      <Modified>2013-06-13T18:56:55.089</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\GroupedItemsPage.xaml">
       <PackagePath>GroupedItemsPage.xaml</PackagePath>
@@ -94,7 +94,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-06-13T18:22:04.620</Modified>
+      <Modified>2013-06-14T13:20:47.547</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -39,7 +39,7 @@ namespace JudgeApp
         protected override async void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var sampleDataGroups = await AppIdeaDataSource.GetCarModelsandCars();
+            var sampleDataGroups = await JudgeDataSource.GetCarModelsandCars();
             this.DefaultViewModel["Groups"] = sampleDataGroups;
         }
 
@@ -51,7 +51,7 @@ namespace JudgeApp
         void Header_Click(object sender, RoutedEventArgs e)
         {
             // Determine what group the Button instance represents
-            var group = (sender as FrameworkElement).DataContext;
+            //var group = (sender as FrameworkElement).DataContext;
 
             // Navigate to the appropriate destination page, configuring the new page
             // by passing required information as a navigation parameter

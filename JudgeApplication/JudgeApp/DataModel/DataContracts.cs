@@ -13,19 +13,25 @@ namespace JudgeApp.DataModel
     [Table("CarModel")]
     public class CarModel : ServiceRef.CarModelType
     {
-        [PrimaryKey]
-        public new int CarModelID { get { return base.CarModelID; } set { base.CarModelID = value; } }
+        //[PrimaryKey]
+        //public new int CarModelID { get { return base.CarModelID; } set { base.CarModelID = value; } }
+        [PrimaryKey, AutoIncrement]
+        public Int32 PkCarModelId { get; set; }
 
         public string CarNameWithModel { get; set; }
 
-        //public CarJudgement carJudgement { get; set; }
+        public int CarShowID { get { return Helper.CarShowId; } set { } }
     }
 
     [Table("Car")]
     public class Car:ServiceRef.CarType
     {
-         [PrimaryKey]
-         public new int CarID { get { return base.CarID; } set { base.CarID = value; } }
+         //[PrimaryKey]
+         //public new int CarID { get { return base.CarID; } set { base.CarID = value; } }
+        [PrimaryKey, AutoIncrement]
+        public Int32 PkCarId { get; set; }
+
+         public int CarShowID { get { return Helper.CarShowId; } set { } }
     }
 
     [Table("CarShow")]
@@ -35,10 +41,10 @@ namespace JudgeApp.DataModel
         public new int CarShowID { get { return base.CarShowID; } set { base.CarShowID = value; } }
     }
 
-    //[Table("CarJudgement")]
+    [Table("CarJudgement")]
     public class CarJudgement : ServiceRef.CarJudgementType
     {
-        //[PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int CarJudgementTypeID { get;set; }
     }
 
