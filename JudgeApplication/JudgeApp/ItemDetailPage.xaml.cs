@@ -8,12 +8,16 @@ using System.IO;
 using System.Linq;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Capture;
+using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Item Detail Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234232
@@ -69,6 +73,42 @@ namespace JudgeApp
         private async void btnSave_Click_1(object sender, RoutedEventArgs e)
         {
             await JudgeDataSource.SaveCarJudgement(judgementItems.DataContext);
+        }
+        /// <summary>
+        /// This is the click handler for the 'CaptureButton' button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void CapturePhoto_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Using Windows.Media.Capture.CameraCaptureUI API to capture a photo
+                CameraCaptureUI dialog = new CameraCaptureUI();
+                Size aspectRatio = new Size(16, 9);
+                dialog.PhotoSettings.CroppedAspectRatio = aspectRatio;
+
+                StorageFile file = await dialog.CaptureFileAsync(CameraCaptureUIMode.Photo);
+                if (file != null)
+                {
+                    var r = await file.OpenReadAsync();
+                    r.ReadAsync(
+                    //BitmapImage bitmapImage = new BitmapImage();
+                    //using (IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read))
+                    //{
+                    //    bitmapImage.SetSource(fileStream);
+                    //}
+                    //CapturedPhoto.Source = bitmapImage;
+                    //ResetButton.Visibility = Visibility.Visible;
+
+                    // Store the file path in Application Data
+                    //appSettings[photoKey] = file.Path;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

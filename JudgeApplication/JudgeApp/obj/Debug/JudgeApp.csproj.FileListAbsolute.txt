@@ -25,10 +25,6 @@ C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\I
 C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\JudgeApp.exe
 C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\JudgeApp.pdb
 C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\JudgeApp.csproj.GenerateResource.Cache
-C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\priconfig.xml.intermediate
-C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\layout.resfiles.intermediate
-C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\resources.resfiles.intermediate
-C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\pri.resfiles.intermediate
 C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\priconfig.xml
 C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\layout.resfiles
 C:\Users\asgaddam\Documents\GitHub\AppIdea\JudgeApplication\JudgeApp\obj\Debug\resources.resfiles

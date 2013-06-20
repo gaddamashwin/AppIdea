@@ -132,9 +132,11 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Text="{Binding CarNameWithModel}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" IsHitTestVisible="false"/>
+            <Button x:Name="CapturePhoto" Grid.Column="3" Click="CapturePhoto_Click" Style="{StaticResource PicturesAppBarButtonStyle}"/>
         </Grid>
 
         <VisualStateManager.VisualStateGroups>

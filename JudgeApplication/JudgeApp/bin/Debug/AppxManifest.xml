@@ -29,7 +29,10 @@
     </Application>
   </Applications>
   <Capabilities>
+    <Capability Name="privateNetworkClientServer" />
     <Capability Name="internetClient" />
+    <DeviceCapability Name="webcam" />
+    <DeviceCapability Name="location" />
   </Capabilities>
   <Dependencies>
     <PackageDependency Name="Microsoft.VCLibs.110.00.Debug" MinVersion="11.0.51106.1" />

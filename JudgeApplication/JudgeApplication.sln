@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JudgeApp", "JudgeApp\JudgeA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JudgeService", "JudgeService\JudgeService.csproj", "{4ABDEFB8-CABF-48E6-9C6C-EBCDA4AD9AE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWithControl", "AppWithControl\AppWithControl.csproj", "{C2678547-E261-47F6-A73D-41123A2F0E31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,30 @@ Global
 		{4ABDEFB8-CABF-48E6-9C6C-EBCDA4AD9AE1}.Release|ARM.ActiveCfg = Release|Any CPU
 		{4ABDEFB8-CABF-48E6-9C6C-EBCDA4AD9AE1}.Release|x64.ActiveCfg = Release|Any CPU
 		{4ABDEFB8-CABF-48E6-9C6C-EBCDA4AD9AE1}.Release|x86.ActiveCfg = Release|Any CPU
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Debug|ARM.ActiveCfg = Debug|ARM
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Debug|ARM.Build.0 = Debug|ARM
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Debug|ARM.Deploy.0 = Debug|ARM
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Debug|x64.ActiveCfg = Debug|x64
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Debug|x64.Build.0 = Debug|x64
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Debug|x64.Deploy.0 = Debug|x64
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Debug|x86.ActiveCfg = Debug|x86
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Debug|x86.Build.0 = Debug|x86
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Debug|x86.Deploy.0 = Debug|x86
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Release|ARM.ActiveCfg = Release|ARM
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Release|ARM.Build.0 = Release|ARM
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Release|ARM.Deploy.0 = Release|ARM
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Release|x64.ActiveCfg = Release|x64
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Release|x64.Build.0 = Release|x64
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Release|x64.Deploy.0 = Release|x64
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Release|x86.ActiveCfg = Release|x86
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Release|x86.Build.0 = Release|x86
+		{C2678547-E261-47F6-A73D-41123A2F0E31}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

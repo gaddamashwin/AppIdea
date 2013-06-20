@@ -132,9 +132,11 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120"/>
             </Grid.ColumnDefinitions>
             <Button x:ConnectionId='1' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Text="{Binding CarNameWithModel}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" IsHitTestVisible="false"/>
+            <Button x:ConnectionId='2' x:Name="CapturePhoto" Grid.Column="3"                            Style="{StaticResource PicturesAppBarButtonStyle}"/>
         </Grid>
 
         <VisualStateManager.VisualStateGroups>
@@ -177,7 +179,7 @@
                 </Grid.ColumnDefinitions>
                 
                 <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
-                    <Button x:ConnectionId='2' x:Name="btnSave"                        />
+                    <Button x:ConnectionId='3' x:Name="btnSave"                        />
                 </StackPanel>
             </Grid>
         </AppBar>
